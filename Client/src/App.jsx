@@ -5,6 +5,7 @@ import { LoginPage } from "./views/LoginPage";
 import {ForgotPasswordPage} from "./views/ForgotPasswordPage";
 import RegisterUserPage from "./views/RegisterUserPage";
 import { IndexPage } from "./views/Index";
+import { HomePage } from "./views/HomePage";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/forgot-password" element={< ForgotPasswordPage/>} />
         <Route path="/register" element={<RegisterUserPage />} />
         <Route path="/inicio" element={<IndexPage />} />
+        <Route path="/home" element={<HomePage />} />
 
         {/*Catch all*/}
         <Route path="*" element={<h1>404 error</h1>} />
