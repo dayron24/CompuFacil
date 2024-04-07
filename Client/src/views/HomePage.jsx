@@ -107,10 +107,10 @@ export function HomePage() {
                         </a>
                         <div className="p-5">
                             <a>
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">{card.title}</h5>
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#0B2027] text-center">{card.title}</h5>
                             </a>
-                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{card.description}</p>
-                            <a href={card.redirectUrl} className="inline-block w-full min-w-full max-w-xs items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                            <p className="mb-3 font-normal text-[#586994]">{card.description}</p>
+                            <a href={card.redirectUrl} className="inline-block w-full min-w-full max-w-xs items-center justify-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
                                 Iniciar curso
                             </a>
                         </div>
@@ -130,7 +130,7 @@ export function HomePage() {
                     <ul className="flex flex-wrap -mb-px">
                         {tabs.map(tab => (
                             <li key={tab.name} className="">
-                                <a className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${activeTab === tab.name ? 'text-blue-600 border-blue-600 active dark:text-blue-500 dark:border-blue-500' : 'border-gray-300 hover:text-gray-600 dark:hover:text-gray-300'}`} onClick={() => handleTabClick(tab.name)}>
+                                <a className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${activeTab === tab.name ? 'text-[#586994] border-[#586994] active' : 'border-gray-300 hover:text-gray-600 dark:hover:text-gray-300'}`} onClick={() => handleTabClick(tab.name)}>
                                     {tab.label}
                                 </a>
                             </li>
@@ -138,7 +138,7 @@ export function HomePage() {
                     </ul>
                 </div>
 
-                <div className="p-5 border border-red-700 rounded-lg">
+                <div className="p-5 border border-red-800 rounded-lg">
                     {renderContent()}
                 </div>
             </div>
