@@ -8,6 +8,8 @@ import { IndexPage } from "./views/Index";
 import { HomePage } from "./views/HomePage";
 import { ViewUser } from "./views/ViewUser";
 import { MenuCurso } from "./views/MenuCurso";
+import { ViewLessons } from "./views/Lessons";
+import { ViewQuestions } from "./views/Questions";
 
 export default function App() {
   return (
@@ -21,6 +23,8 @@ export default function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/user" element={<ViewUser />} />
         <Route path="/menu" element={<MenuCurso />} />
+        <Route path="/lessons" element={<ViewLessons />} />
+        <Route path="/questions" element={<ViewQuestions />} />
 
         {/*Catch all*/}
         <Route path="*" element={<h1>404 error</h1>} />
