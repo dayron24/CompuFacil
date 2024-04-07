@@ -7,6 +7,7 @@ import RegisterUserPage from "./views/RegisterUserPage";
 import { IndexPage } from "./views/Index";
 import { HomePage } from "./views/HomePage";
 import { ViewUser } from "./views/ViewUser";
+import { MenuCurso } from "./views/MenuCurso";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/inicio" element={<IndexPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/user" element={<ViewUser />} />
+        <Route path="/menu" element={<MenuCurso />} />
 
         {/*Catch all*/}
         <Route path="*" element={<h1>404 error</h1>} />
