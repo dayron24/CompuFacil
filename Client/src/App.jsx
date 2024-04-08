@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/" element={<LoginPage />} /><Route path="/register-student" element={<RegisterUserPage />} />
         <Route path="/forgot-password" element={< ForgotPasswordPage/>} />
         <Route path="/register" element={<RegisterUserPage />} />
-        <Route path="/inicio" element={<IndexPage />} />
+        <Route path="/inicio" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/user" element={<ViewUser />} />
         <Route path="/menu" element={<MenuCurso />} />

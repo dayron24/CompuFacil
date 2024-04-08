@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Header } from '../components/Header';
 export function HomePage() {
     const [activeTab, setActiveTab] = useState('nivel0');
 
@@ -122,9 +122,7 @@ export function HomePage() {
 
     return (
         <div className="relative">
-            <header className="bg-red-800 text-white text-4xl font-bold text-center py-4">
-                <h1>CompuFacil</h1>
-            </header>
+            <Header></Header>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto min-h-screen">
                 <div className="pb-5 text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
                     <ul className="flex flex-wrap -mb-px">

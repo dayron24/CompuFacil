@@ -50,7 +50,7 @@ export function LoginPage() {
       setAuth({name,photo,email, password, roles: [roles[0]]});
       setEmail("");
       setPassword("");
-      navigate("/inicio");
+      navigate("/home");
     } catch (err) {
       if (!err?.response) {
         console.log(err);
@@ -121,7 +121,7 @@ export function LoginPage() {
               </div>
 
               <div>
-                              <label className="block mb-2 text-sm font-bold font-large text-center text-#0B2027 ">
+                  <label className="block mb-2 text-sm font-bold font-large text-center text-#0B2027 ">
                   Contraseña:
                 </label>
                 <input
@@ -144,20 +144,20 @@ export function LoginPage() {
 
               <button
                 type="submit"
-                className="w-full justify-center text-white bg-red-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center 
+                className="w-full justify-center text-white bg-red-800 font-bold  rounded-lg text-sm px-5 py-2.5 text-center 
                       hover:bg-gradient-to-r hover:from-teal-600 hover:to-cyan-800 hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
               >
                 Iniciar Sesión
               </button>
 
-              <p className="text-sm font-light text-002857 ">
+              {/* <p className="text-sm font-light text-002857 ">
                 <Link
                   to="/forgot-password"
                   className="font-bold text-#0B2027 underline"
                 >
                   ¿Olvidó su contraseña?
                 </Link>
-              </p>
+              </p> */}
 
               <p className="text-sm font-light text-002857 ">
                 <Link

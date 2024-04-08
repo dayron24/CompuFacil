@@ -1,4 +1,5 @@
 import React from 'react';
+import { Header } from '../components/Header';
 
 export function ViewLessons() {
     const itemInfo = {
@@ -10,9 +11,7 @@ export function ViewLessons() {
 
     return (
         <div className="relative">
-            <header className="bg-red-800 text-white text-4xl font-bold text-center py-4">
-                <h1>CompuFacil</h1>
-            </header>
+            <Header></Header>
 
             <div className="px-6 py-8">
                 <div className="mb-5 flex">

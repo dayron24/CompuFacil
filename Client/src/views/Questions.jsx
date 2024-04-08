@@ -1,4 +1,5 @@
 import React from 'react';
+import { Header } from '../components/Header';
 
 export function ViewQuestions() {
     const questions = [
@@ -61,9 +62,7 @@ export function ViewQuestions() {
 
     return (
         <div className="relative">
-            <header className="bg-red-800 text-white text-4xl font-bold text-center py-4">
-                <h1>CompuFacil</h1>
-            </header>
+            <Header></Header>
 
             <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline px-10">Examen:</h2>
 

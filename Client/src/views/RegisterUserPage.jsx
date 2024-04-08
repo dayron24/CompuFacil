@@ -27,7 +27,6 @@ function RegisterUserPage() {
 		confirmPassword: '',
     lastName1: '',
     lastName2: '',
-    carnet: '',
     photoFile: null,
 	});
 
@@ -42,11 +41,6 @@ function RegisterUserPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-
-    if (!formData.email.endsWith('@estudiantec.cr')) {
-      setErrorMsg("El correo electrónico ser una cuenta '@estudiantec'");
-      return;
-    }
 
     if (formData.password !== formData.confirmPassword) {
       setErrorMsg("La contraseña no coincide");
@@ -111,7 +105,11 @@ function RegisterUserPage() {
   };
 
   return (
-    <div className="absolute inset-0 bg-cover bg-center" style={styles}>
+    <div className="relative">
+    <header className="bg-red-800 text-white text-4xl font-bold text-center py-4">
+    <h1>CompuFacil</h1>
+   </header>
+    <div className="absolute inset-x-0 bg-cover bg-center"  style={styles} >
       <p
         ref={errorRef}
         className={errorMsg ? "errmsg" : "offscreen"}
@@ -121,7 +119,7 @@ function RegisterUserPage() {
       </p>
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
 
-        <div className="w-full bg-customblue rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white-800 dark:border-gray-700" >
+        <div className="w-full bg-customgray rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white-800 dark:border-gray-700" >
           <div className="flex flex-col items-center justify-center ">
             <div className="w-6/12 ">
               <form
@@ -130,7 +128,7 @@ function RegisterUserPage() {
                   //onsult(e);
                 }}
               >
-                <h2 className="mb-9 text-[40px] font-medium  text-center  leading-tight tracking-tight text-white md:text-2xl ">
+                <h2 className="mb-9 text-[5 0px] font-bold  text-center  leading-tight tracking-tight text-black md:text-2xl ">
                   Registro
                 </h2>
                 <div className="w-full px-3 mb-6 md:mb-0">
@@ -158,10 +156,10 @@ function RegisterUserPage() {
                             />
                           </div>
                           <div className="relative items-center">
-                            <span className="block relative text-blue-500 group-hover:text-blue-500">
+                            <span className="block relative text-white group-hover:text-blue-500">
                               Subir archivo
                             </span>
-                            <span className="mt-0.5 block text-sm text-gray-500 dark:text-gray-400">
+                            <span className="mt-0.5 block text-sm text-black ">
                               {fileName}
                             </span>
                           </div>
@@ -232,24 +230,6 @@ function RegisterUserPage() {
                 </div>
 
                 <div className="flex flex-wrap -mx-20 mb-6">
-
-                  <div className="w-full px-3">
-                    <label
-                      className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
-                      htmlFor="grid-celular"
-                    >
-                      Número de Carnet
-                    </label>
-                    <input
-                      onChange={ handleInputChange}
-                      className="appearance-none block w-full bg-white-200 text-black border rounded-2xl py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white shadow-xl"
-                      id="grid-last-name"
-                      type="text"
-                      placeholder=""
-                      name='carnet'
-                      defaultValue={formData.carnet}
-                    />
-                  </div>
                   <div className="w-full px-3">
                     <label
                       className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
@@ -312,7 +292,7 @@ function RegisterUserPage() {
                       <div className="max-w-full w-3/12 h-full ">
                         <button
                           type="submit"
-                          className="justify-center text-white bg-gradient-to-r from-teal-700 to-cyan-950 font-medium rounded-lg text-sm px-5 py-2.5 text-center 
+                          className="justify-center text-white bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center 
                     hover:bg-gradient-to-r hover:from-teal-600 hover:to-cyan-800 hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
                         >
                           Registrar
@@ -325,6 +305,7 @@ function RegisterUserPage() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
