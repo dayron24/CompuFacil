@@ -8,23 +8,23 @@ export function MenuCurso() {
             lessons: [
                 {
                     name: 'Lección #1',
-                    redirectUrl: '#',
+                    redirectUrl: '/lessons',
                 },
                 {
                     name: 'Lección #2',
-                    redirectUrl: '#',
+                    redirectUrl: '/lessons',
                 },
                 {
                     name: 'Lección #3',
-                    redirectUrl: '#',
+                    redirectUrl: '/lessons',
                 },
                 {
                     name: 'Lección #4',
-                    redirectUrl: '#',
+                    redirectUrl: '/lessons',
                 },
                 {
                     name: 'Examen #1',
-                    redirectUrl: '#',
+                    redirectUrl: '/questions',
                 },
             ],
         },
@@ -33,23 +33,23 @@ export function MenuCurso() {
             lessons: [
                 {
                     name: 'Lección #1',
-                    redirectUrl: '#',
+                    redirectUrl: '/lessons',
                 },
                 {
                     name: 'Lección #2',
-                    redirectUrl: '#',
+                    redirectUrl: '/lessons',
                 },
                 {
                     name: 'Lección #3',
-                    redirectUrl: '#',
+                    redirectUrl: '/lessons',
                 },
                 {
                     name: 'Lección #4',
-                    redirectUrl: '#',
+                    redirectUrl: '/lessons',
                 },
                 {
                     name: 'Examen #1',
-                    redirectUrl: '#',
+                    redirectUrl: '/questions',
                 },
             ],
         },

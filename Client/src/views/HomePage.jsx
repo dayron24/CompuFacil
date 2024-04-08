@@ -17,14 +17,12 @@ export function HomePage() {
                     description: 'Description for Card 1',
                     imageUrl: '/src/img/backgroundLogin.jpg',
                     altText: 'Card 1 Image',
-                    redirectUrl: '#'
                 },
                 {
                     title: 'Card 02',
                     description: 'Description for Card 2',
                     imageUrl: '/src/img/backgroundLogin.jpg',
                     altText: 'Card 2 Image',
-                    redirectUrl: '#'
                 },
                 // Add more cards here
             ]
@@ -38,14 +36,12 @@ export function HomePage() {
                     description: 'Description for Card 1',
                     imageUrl: '/src/img/backgroundLogin.jpg',
                     altText: 'Card 1 Image',
-                    redirectUrl: '#'
                 },
                 {
                     title: 'Card 12',
                     description: 'Description for Card 2',
                     imageUrl: '/src/img/backgroundLogin.jpg',
                     altText: 'Card 2 Image',
-                    redirectUrl: '#'
                 },
                 // Add more cards here
             ]
@@ -59,14 +55,12 @@ export function HomePage() {
                     description: 'Description for Card 1',
                     imageUrl: '/src/img/backgroundLogin.jpg',
                     altText: 'Card 1 Image',
-                    redirectUrl: '#'
                 },
                 {
                     title: 'Card 22',
                     description: 'Description for Card 2',
                     imageUrl: '/src/img/backgroundLogin.jpg',
                     altText: 'Card 2 Image',
-                    redirectUrl: '#'
                 },
                 // Add more cards here
             ]
@@ -80,14 +74,12 @@ export function HomePage() {
                     description: 'Description for Card 1',
                     imageUrl: '/src/img/backgroundLogin.jpg',
                     altText: 'Card 1 Image',
-                    redirectUrl: '#'
                 },
                 {
                     title: 'Card 32',
                     description: 'Description for Card 2',
                     imageUrl: '/src/img/backgroundLogin.jpg',
                     altText: 'Card 2 Image',
-                    redirectUrl: '#'
                 },
                 // Add more cards here
             ]
@@ -102,7 +94,7 @@ export function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {currentTab.cards.map((card, index) => (
                     <div key={index} className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href={card.redirectUrl}>
+                        <a href='/menu'>
                             <img className="rounded-t-lg" src={card.imageUrl} alt={card.altText} />
                         </a>
                         <div className="p-5">
@@ -110,7 +102,7 @@ export function HomePage() {
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#0B2027] text-center">{card.title}</h5>
                             </a>
                             <p className="mb-3 font-normal text-[#586994]">{card.description}</p>
-                            <a href={card.redirectUrl} className="inline-block w-full min-w-full max-w-xs items-center justify-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
+                            <a href='/menu' className="inline-block w-full min-w-full max-w-xs items-center justify-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
                                 Iniciar curso
                             </a>
                         </div>
