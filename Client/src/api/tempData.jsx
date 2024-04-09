@@ -80,6 +80,5 @@ export function getLessonQuestions(lesson, lesson_content_index) {
         })
     }
 
-    console.log(questions)
     return questions;
 }
