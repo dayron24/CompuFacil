@@ -1,64 +1,30 @@
 import React from 'react';
 import { Header } from '../components/Header';
+import testData from "../data/documento.json"
 
 export function ViewQuestions() {
-    const questions = [
-        {
-            id: '1',
-            title: 'Como se llama este dispositivo?',
+    const questions = [];
+
+    const tempData = JSON.parse(JSON.stringify(testData))
+    const lesson_questions = tempData.clases[0].lecciones[0].contenido_leccion[0].preguntas
+
+    for (let i = 0; i < lesson_questions.length; i++) {
+        const question_info = lesson_questions[i];
+
+        const question = {
+            id: i,
+            title: question_info.pregunta,
             imageUrl: '/src/img/mouse.jpg',
             altText: 'question 1 Image',
-            option1: 'Option 11',
-            option2: 'Option 21',
-            option3: 'Option 31',
-            option4: 'Option 41',
+            option1: question_info.respuestas[0].respuesta,
+            option2: question_info.respuestas[1].respuesta,
+            option3: question_info.respuestas[2].respuesta,
+            option4: question_info.respuestas[3].respuesta,
             redirectUrl: '#'
-        },
-        {
-            id: '2',
-            title: 'Pregunta #2',
-            imageUrl: '/src/img/mouse.jpg',
-            altText: 'question 2 Image',
-            option1: 'Option 12',
-            option2: 'Option 22',
-            option3: 'Option 32',
-            option4: 'Option 42',
-            redirectUrl: '#'
-        },
-        {
-            id: '3',
-            title: 'Pregunta #3',
-            imageUrl: '/src/img/mouse.jpg',
-            altText: 'question 3 Image',
-            option1: 'Option 13',
-            option2: 'Option 23',
-            option3: 'Option 33',
-            option4: 'Option 43',
-            redirectUrl: '#'
-        },
-        {
-            id: '4',
-            title: 'Pregunta #4',
-            imageUrl: '/src/img/mouse.jpg',
-            altText: 'question 4 Image',
-            option1: 'Option 14',
-            option2: 'Option 24',
-            option3: 'Option 34',
-            option4: 'Option 44',
-            redirectUrl: '#'
-        },
-        {
-            id: '5',
-            title: 'Pregunta #5',
-            imageUrl: '/src/img/mouse.jpg',
-            altText: 'question 5 Image',
-            option1: 'Option 15',
-            option2: 'Option 25',
-            option3: 'Option 35',
-            option4: 'Option 45',
-            redirectUrl: '#'
-        },
-    ];
+        }
+
+        questions.push(question)
+    }
 
     return (
         <div className="relative">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from '../components/Header';
+import testData from "../data/documento.json"
 
 export function ViewLessons() {
     const itemInfo = {
@@ -10,6 +11,9 @@ export function ViewLessons() {
         text:'El mouse es un dispositivo de entrada diseñado para manipular objetos en la pantalla de la computadora y ayudarlo a usted, el usuario, a interactuar con la computadora.'
     };
 
+    const tempData = JSON.parse(JSON.stringify(testData))
+    const lesson_info = tempData.clases[0].lecciones[0].contenido_leccion[0].informacion
+
     return (
         <div className="relative">
             <Header></Header>
@@ -17,15 +21,15 @@ export function ViewLessons() {
             <div className="px-6 py-8">
                 <div className="mb-5 flex">
                     <div className="mr-5 w-1/2 flex justify-center items-center ">
-                        <img className="w-80 h-80 rounded-lg" src={itemInfo.imageUrl} alt={itemInfo.altText} />
+                        <img className="w-80 h-80 rounded-lg" src={lesson_info.imagen} alt={itemInfo.altText} />
                     </div>
                     <div className="w-1/2 h-1/2 py-20">
-                        <p className="text-4xl font-bold mb-3"> {itemInfo.name}</p>
+                        <p className="text-4xl font-bold mb-3"> {lesson_info.titulo}</p>
                     </div>
                 </div>
 
                 <div className='px-20 py-20 bg-blue-900 rounded-lg'>
-                    <p className="text-3xl mb-3 text-white font-bold text-center "> {itemInfo.text} </p>
+                    <p className="text-3xl mb-3 text-white font-bold text-center "> {lesson_info.descripcion} </p>
                 </div>
             </div>
             <div className="flex justify-center">
