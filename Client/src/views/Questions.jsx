@@ -1,28 +1,28 @@
+import { useNavigate, useLocation } from "react-router-dom";
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import testData from "../data/documento.json"
-import { useNavigate } from "react-router-dom";
+
 export function ViewQuestions() {
     const [selectedAnswers, setSelectedAnswers] = useState(new Array(testData.clases[0].lecciones[0].contenido_leccion[0].preguntas.length).fill('')); // Array para almacenar las respuestas seleccionadas por el usuario
 
     const questions = [];
 
-    const tempData = JSON.parse(JSON.stringify(testData))
-    const lesson_questions = tempData.clases[0].lecciones[0].contenido_leccion[0].preguntas
+    const lesson = getLesson(1, 1);
+    const lesson_questions = getLessonQuestions(lesson, 1);
 
     for (let i = 0; i < lesson_questions.length; i++) {
         const question_info = lesson_questions[i];
 
         const question = {
             id: i,
-            title: question_info.pregunta,
+            title: question_info.question,
             imageUrl: '/src/img/mouse.jpg',
             altText: 'question 1 Image',
             option1: question_info.respuestas[0].respuesta,
             option2: question_info.respuestas[1].respuesta,
             option3: question_info.respuestas[2].respuesta,
             option4: question_info.respuestas[3].respuesta,
-            correctAnswer: question_info.respuestas.find(respuesta => respuesta.esCorrecta).respuesta, // Obtener la respuesta correcta basada en 'esCorrecta'
             redirectUrl: '#'
         }
 
