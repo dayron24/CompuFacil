@@ -11,12 +11,14 @@ import { MenuCurso } from "./views/MenuCurso";
 import { ViewLessons } from "./views/Lessons";
 import { ViewQuestions } from "./views/Questions";
 
+
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         {/*Public routes */}
-        <Route path="/" element={<LoginPage />} /><Route path="/register-student" element={<RegisterUserPage />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/register-student" element={<RegisterUserPage />} />
         <Route path="/forgot-password" element={< ForgotPasswordPage/>} />
         <Route path="/register" element={<RegisterUserPage />} />
         <Route path="/inicio" element={<HomePage />} />
@@ -24,7 +26,7 @@ export default function App() {
         <Route path="/user" element={<ViewUser />} />
         <Route path="/menu" element={<MenuCurso />} />
         <Route path="/lessons" element={<ViewLessons />} />
-        <Route path="/questions" element={<ViewQuestions />} />
+        <Route path="/questions/:clase/:id" element={<ViewQuestions />} />
 
         {/*Catch all*/}
         <Route path="*" element={<h1>404 error</h1>} />

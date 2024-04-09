@@ -13,17 +13,17 @@ export function HomePage() {
             label: 'Nivel 0',
             cards: [
                 {
-                    title: 'Card 01',
-                    description: 'Description for Card 1',
-                    imageUrl: '/src/img/backgroundLogin.jpg',
+                    title: "Introducción al uso básico de una computadora",
+                    description: "Este curso proporciona una introducción fundamental al uso básico de una computadora, abarcando desde conceptos básicos hasta la realización de tareas comunes como la gestión de archivos y el uso de aplicaciones estándar. Ideal para quienes desean adquirir confianza y habilidades esenciales en el manejo de tecnología informática.",   
+                    imageUrl: "https://i.ibb.co/vs3MD2v/Portada-Curso-1.jpg",
                     altText: 'Card 1 Image',
                 },
-                {
-                    title: 'Card 02',
-                    description: 'Description for Card 2',
-                    imageUrl: '/src/img/backgroundLogin.jpg',
-                    altText: 'Card 2 Image',
-                },
+                // {
+                //     title: 'Card 02',
+                //     description: 'Description for Card 2',
+                //     imageUrl: '/src/img/backgroundLogin.jpg',
+                //     altText: 'Card 2 Image',
+                // },
                 // Add more cards here
             ]
         },
@@ -31,18 +31,18 @@ export function HomePage() {
             name: 'nivel1',
             label: 'Nivel 1',
             cards: [
-                {
-                    title: 'Card 11',
-                    description: 'Description for Card 1',
-                    imageUrl: '/src/img/backgroundLogin.jpg',
-                    altText: 'Card 1 Image',
-                },
-                {
-                    title: 'Card 12',
-                    description: 'Description for Card 2',
-                    imageUrl: '/src/img/backgroundLogin.jpg',
-                    altText: 'Card 2 Image',
-                },
+                // {
+                //     title: 'Card 11',
+                //     description: 'Description for Card 1',
+                //     imageUrl: '/src/img/backgroundLogin.jpg',
+                //     altText: 'Card 1 Image',
+                // },
+                // {
+                //     title: 'Card 12',
+                //     description: 'Description for Card 2',
+                //     imageUrl: '/src/img/backgroundLogin.jpg',
+                //     altText: 'Card 2 Image',
+                // },
                 // Add more cards here
             ]
         },
@@ -50,18 +50,18 @@ export function HomePage() {
             name: 'nivel2',
             label: 'Nivel 2',
             cards: [
-                {
-                    title: 'Card 21',
-                    description: 'Description for Card 1',
-                    imageUrl: '/src/img/backgroundLogin.jpg',
-                    altText: 'Card 1 Image',
-                },
-                {
-                    title: 'Card 22',
-                    description: 'Description for Card 2',
-                    imageUrl: '/src/img/backgroundLogin.jpg',
-                    altText: 'Card 2 Image',
-                },
+                // {
+                //     title: 'Card 21',
+                //     description: 'Description for Card 1',
+                //     imageUrl: '/src/img/backgroundLogin.jpg',
+                //     altText: 'Card 1 Image',
+                // },
+                // {
+                //     title: 'Card 22',
+                //     description: 'Description for Card 2',
+                //     imageUrl: '/src/img/backgroundLogin.jpg',
+                //     altText: 'Card 2 Image',
+                // },
                 // Add more cards here
             ]
         },
@@ -69,18 +69,18 @@ export function HomePage() {
             name: 'nivel3',
             label: 'Nivel 3',
             cards: [
-                {
-                    title: 'Card 31',
-                    description: 'Description for Card 1',
-                    imageUrl: '/src/img/backgroundLogin.jpg',
-                    altText: 'Card 1 Image',
-                },
-                {
-                    title: 'Card 32',
-                    description: 'Description for Card 2',
-                    imageUrl: '/src/img/backgroundLogin.jpg',
-                    altText: 'Card 2 Image',
-                },
+                // {
+                //     title: 'Card 31',
+                //     description: 'Description for Card 1',
+                //     imageUrl: '/src/img/backgroundLogin.jpg',
+                //     altText: 'Card 1 Image',
+                // },
+                // {
+                //     title: 'Card 32',
+                //     description: 'Description for Card 2',
+                //     imageUrl: '/src/img/backgroundLogin.jpg',
+                //     altText: 'Card 2 Image',
+                // },
                 // Add more cards here
             ]
         },
@@ -97,7 +97,7 @@ export function HomePage() {
                         <a href='/menu'>
                             <img className="rounded-t-lg" src={card.imageUrl} alt={card.altText} />
                         </a>
-                        <div className="p-5">
+                        <div className="p-5 bg-yellow-50">
                             <a>
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#0B2027] text-center">{card.title}</h5>
                             </a>
