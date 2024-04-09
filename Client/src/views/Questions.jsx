@@ -2,6 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import testData from "../data/documento.json"
+import { getLesson, getLessonQuestions } from "../api/tempData"
 
 export function ViewQuestions() {
     const [selectedAnswers, setSelectedAnswers] = useState(new Array(testData.clases[0].lecciones[0].contenido_leccion[0].preguntas.length).fill('')); // Array para almacenar las respuestas seleccionadas por el usuario
@@ -19,10 +20,10 @@ export function ViewQuestions() {
             title: question_info.question,
             imageUrl: '/src/img/mouse.jpg',
             altText: 'question 1 Image',
-            option1: question_info.respuestas[0].respuesta,
-            option2: question_info.respuestas[1].respuesta,
-            option3: question_info.respuestas[2].respuesta,
-            option4: question_info.respuestas[3].respuesta,
+            option1: question_info.answers[0].respuesta,
+            option2: question_info.answers[1].respuesta,
+            option3: question_info.answers[2].respuesta,
+            option4: question_info.answers[3].respuesta,
             redirectUrl: '#'
         }
 
@@ -39,7 +40,7 @@ export function ViewQuestions() {
         const index = question.id;
         const correctAnswer = questions[index].correctAnswer;
         const selectedAnswer = selectedAnswers[index];
-    
+
         if (selectedAnswer === correctAnswer) {
             alert(`¡Bien, Respuesta Correcta en la pregunta #${index + 1}!`);
         } else {
