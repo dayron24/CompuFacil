@@ -54,3 +54,32 @@ export function getLessonContent(lesson, lesson_content_index) {
         "lesson_questions": contents[lesson_content_index - 1].preguntas
     }
 }
+
+/**
+ * Return the questions of a single lesson.
+ * @param {Object} lesson  - The lesson object.
+ * @param {number} lesson_content_index - The lesson content index.
+ * @returns {[{question: string, answers: [{ respuesta: string, esCorrecta: boolean}]}] | null} A JSON object containing the specified contents of the lesson.
+ */
+export function getLessonQuestions(lesson, lesson_content_index) {
+    if (lesson == null) {
+        return null;
+    }
+
+    const contents = lesson.lesson_content;
+    if (contents.length <= (lesson_content_index - 1)) {
+        return null;
+    }
+
+    const questions_raw = contents[lesson_content_index - 1].preguntas
+    let questions = []
+    for (let i = 0; i < questions_raw.length; i++) {
+        questions.push({
+            "question": questions_raw[i].pregunta,
+            "answers": questions_raw[i].respuestas
+        })
+    }
+
+    console.log(questions)
+    return questions;
+}
