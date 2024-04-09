@@ -1,0 +1,974 @@
+{
+    "titulo": "Introducción al uso básico de una computadora",
+    "descripcion": "Este curso proporciona una introducción fundamental al uso básico de una computadora, abarcando desde conceptos básicos hasta la realización de tareas comunes como la gestión de archivos y el uso de aplicaciones estándar. Ideal para quienes desean adquirir confianza y habilidades esenciales en el manejo de tecnología informática.",
+    "imagen": "https://i.ibb.co/vs3MD2v/Portada-Curso-1.jpg",
+    "audio": "",
+    "clases": [
+        {
+            "nombre": "Clase 1 - El Entorno",
+            "lecciones": [
+                {
+                    "nombre": "Leccion 1 - El entorno fisico de una computadora\n",
+                    "contenido_leccion": [
+                        {
+                            "informacion": {
+                                "titulo": "Tema 1 - Mouse:",
+                                "descripcion": "El mouse es un dispositivo utilizado para interactuar con una computadora. El icono visual que representa la posicion del mouse en la pantalla se llama 'cursor' o 'puntero' y a traves de este, el usuario realiza diversas acciones mediante clics y movimientos. Los principales botones del mouse son el click izquierdo, el click derecho y la rueda del centro. El click izquierdo se utiliza generalmente para seleccionar y abrir programas, mientras que el click derecho proporciona acceso a un menu conocido como 'menu contextual' con distintas opciones. La rueda del centro, tambien conocida como rueda de desplazamiento, permite desplazarse hacia arriba o hacia abajo en documentos largos o paginas web, facilitando la navegacion y la lectura. Estas funciones basicas del mouse son fundamentales para la interaccion fluida y eficiente con la computadora.",
+                                "imagen": "https://i.ibb.co/zFRm0Ky/Mouse.jpg"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Que funcion cumple el mouse en una computadora?,",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Permitir la interaccion con la interfaz de usuario por medio de sus botones.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Controla el brillo de la pantalla.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Activa la camara web.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Funciona como grabador de audio.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Como se llama el icono visual que representa la posicion y la interaccion del mouse en la pantalla?,",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Tecla de funcion.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Barra de desplazamiento.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Cursor.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Menu contextual.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Cuales son las funciones de los principales botones del mouse, siendo estos click izquierdo, click derecho y la rueda del centro?,",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Seleccionar o activar elementos en la pantalla.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Eliminar archivos de la computadora.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Acceder al menu contextual.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "No cumple ninguna funcion.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 2 - Teclado:",
+                                "descripcion": "El teclado de una computadora es un dispositivo que permite escribir dentro de la computadora. Su funcion principal es facilitar la introduccion de texto y numeros en la computadora. El nombre oficial del teclado utilizado comunmente es 'teclado QWERTY', llamado asi por las primeras seis letras en la fila superior de teclas. Este diseño se ha vuelto estandar en la mayoria de los teclados de computadora debido a su amplia adopcion y familiaridad entre los usuarios.",
+                                "imagen": "https://i.ibb.co/16XYSRt/Teclado.jpg"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Cual es la funcion principal del teclado en una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Ingresar datos como texto y numeros mediante la entrada de texto.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Controlar la velocidad del ventilador.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Encender y apagar la computadora.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Mover el cursor en la pantalla.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Cual es el nombre oficial del teclado utilizado comunmente?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Teclado QWERTY.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Teclado ABC.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": " Teclado RGB.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Teclado español.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 3 - Monitor:",
+                                "descripcion": "El monitor es un dispositivo de salida de la computadora, utilizado para mostrar informacion visual del sistema. Su funcion principal es mostrar imagenes, texto, videos y otros contenidos para que el usuario pueda interactuar con ellos, haciendo el uso de la computadora una tarea mucho mas sencilla. El monitor muestra informacion de manera visual, permitiendo al usuario ver lo que esta sucediendo en la computadora en tiempo real, incluyendo sus interacciones con el mouse y el teclado.",
+                                "imagen": "https://i.ibb.co/TqYbdCQ/Monitor.jpg"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Cual es la funcion principal de un monitor en una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Controlar la temperatura del procesador.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Almacenar datos en la memoria RAM.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Reproducir distintos sonidos.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Mostrar la informacion de la computadora de forma visual en tiempo real.",
+                                            "esCorrecta": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 4 - Chasis / CPU:",
+                                "descripcion": "El chasis de una computadora es la estructura externa que almacena todos los componentes internos de la misma. Su funcion principal es proporcionar proteccion y soporte a estos componentes, ademas de permitir la conexion entre ellos y otros dispositivos externos. Podria verse el chasis como el 'esqueleto' de la computadora, manteniendo todo en su lugar y protegiendo los delicados componentes. Otro nombre por el que se le denomina a la computadora, incluyendo chasis y todos sus componentes, es 'CPU', sin embargo, mas adelante se daran mas detalles sobre la estructura interna de la computadora y el verdadero significado de CPU.",
+                                "imagen": "https://i.ibb.co/9g7ZQJk/Chasis-CPU.jpg"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Que es el chasis de una computadora y cual es su funcion?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "El chasis de una computadora es la estructura que protege los componentes internos.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": " Es una unidad de almacenamiento de datos que permite guardar datos de manera permanente.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Es el dispositivo de entrada principal que recibe instrucciones de texto.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Es un dispositivo de salida cuya funcion es reproducir sonidos.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Como se podria considerar el CPU con respecto a la computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Como el corazon de la computadora.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Como el cerebro de la computadora.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Como los oidos de la computadora.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Como los ojos de la computadora.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Cual es el nombre comun con el que se le denomina a la computadora (todos los componentes dentro del chasis)?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Teclado.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Monitor.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Esqueleto.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "CPU.",
+                                            "esCorrecta": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 5 - Perifericos adicionales (Camara, Microfono, Parlantes, Audifonos):",
+                                "descripcion": "Los perifericos son dispositivos externos que se conectan a la computadora, como el mouse y el teclado, los cuales proporcionan funcionalidades especificas. Estos dispositivos pueden incluir elementos de entrada, salida y almacenamiento que amplian las capacidades de la computadora. Un ejemplo de un periferico, ademas del mouse y el teclado; es la camara, un periferico que permite capturar imagenes y videos, enriqueciendo la experiencia del usuario al permitir la comunicacion visual a traves de aplicaciones como videollamadas, fotografias o grabaciones de video. Otro ejemplo de periferico es el microfono, el cual amplia las capacidades de entrada de la computadora al permitir grabar sonidos externos.",
+                                "imagen": "https://i.ibb.co/ZfY3w1j/Perifericos.jpg"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Que son los perifericos de una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Son dispositivos que se conectan a la misma para ampliar sus capacidades de entrada y salida.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": " Son los componentes internos que procesan la informacion.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": " Son programas de software preinstalados en la computadora.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Son los dispositivos encargados unicamente del sonido",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Cual es la funcion de una camara en una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Controlar el volumen de sonido.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Capturar imagenes y videos.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Ajustar el brillo de la pantalla.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Capturar audio externo.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Cual es la funcion de un microfono en una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Grabacion de audio.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": " Mostrar imagenes en la pantalla.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": " Controlar el cursor del mouse.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Escribir en la pantalla.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Cual es otro ejemplo de periferico?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "CPU.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": " Chasis.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Impresora",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Fuente de energia.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "nombre": "Leccion 2 - El entorno no fisico de una computadora\n",
+                    "contenido_leccion": [
+                        {
+                            "informacion": {
+                                "titulo": "Tema 1 - Cursor:",
+                                "descripcion": "El cursor es un elemento visual en la pantalla de la computadora que representa la posicion y la interaccion del mouse, en forma de una especie de flecha. El cursor se mueve en respuesta a los movimientos del mouse y se utiliza para señalar, seleccionar e interactuar con los elementos en el monitor.",
+                                "imagen": "https://i.ibb.co/Wt8LtjV/Cursor.jpg"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Cual es la funcion del cursor?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Controlar la temperatura del procesador.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Indicar la posicion actual en la pantalla.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Reproducir archivos de audio.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Hacer llamadas.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Como se representa visualmente el cursor en la pantalla?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Un cuadrado.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Una flecha.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Una barra de desplazamiento.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Un circulo.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Que acciones puedes realizar utilizando el cursor en la interfaz de usuario de la computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Enviar texto a la pantalla.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Resolver calculos matematicos.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Puedes seleccionar elementos haciendo clic en ellos.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Hacer llamadas.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Como interactuas con el cursor en la pantalla?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Utilizando los botones del teclado.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Utilizando comandos de voz.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Con el movimiento de los ojos.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Moviendo el mouse.",
+                                            "esCorrecta": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 2 - Escritorio:",
+                                "descripcion": "El escritorio es la pantalla principal que se muestra cuando enciendes la computadora y donde se encuentran los iconos de los programas, archivos y carpetas. Es una especie de espacio de trabajo donde puedes organizar y acceder a tus aplicaciones y documentos de manera rapida. El escritorio puede componerse de los iconos de los programas, archivos y widgets que proporcionan informacion del mundo o la computadora, y los cuales puedes interactuar con ellos por medio del cursor, ya sea para abrirlos o personalizar la disposicion del escritorio.",
+                                "imagen": "https://i.ibb.co/4S0BdwQ/Escritorio.jpg"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Cual es la funcion principal del escritorio?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Proporcionar un espacio virtual para archivos.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Controlar la temperatura del procesador.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Reproducir archivos de audio.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Ingresar en paginas web.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Que elementos puede contener el escritorio?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Archivos y aplicaciones.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Imagenes animadas.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Configuraciones de red.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Videos en reproduccion.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Son los iconos de los escritorios estaticos y no pueden moverse o eliminarse?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Si, los iconos son estaticos y no se pueden mover.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Depende del nivel de bateria de la computadora.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "No, los iconos de los escritorios no son estaticos.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Depende de los tipos de iconos.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 3 - Programas:",
+                                "descripcion": "Los programas, tambien conocidos como aplicaciones, son el principal motivo por el cual poseer una computadora, ya que son los que permiten realizar una gran cantidad de funciones, dependiendo de la necesidad de las personas. Los programas incluyen una amplia gama de matices, pueden ser tan simples como un bloc de notas o tan complejos como un videojuego. Los programas se ejecutan en la computadora y proporcionan herramientas y funcionalidades especificas para realizar tareas como escribir documentos, navegar por internet, editar imagenes, reproducir audio o videos, entre otros.",
+                                "imagen": "https://i.ibb.co/F7G1qSv/Programas-Win11.jpg"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Cual es la diferencia entre un programa y un archivo?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Un archivo es un dispositivo de entrada.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Un programa es un tipo de archivo de audio.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Un programa puede realizar una tarea especifica en una computadora.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Un archivo puede realizar una tarea especifica en una computadora.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Cual de las siguientes opciones se puede considerar un programa?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Un documento de texto.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Una imagen digital.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Un archivo de musica.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Un explorador web",
+                                            "esCorrecta": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Como se inician los programas en una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Haciendo doble clic en su icono.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Todos los programas se inician automaticamente al encender la computadora.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Por medio de un comando de voz.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Escribiendo el nombre del programa con el teclado.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nombre": "Clase 2 - Uso Básico",
+            "lecciones": [
+                {
+                    "nombre": "Leccion 1 - Uso basico de una computadora\n",
+                    "contenido_leccion": [
+                        {
+                            "informacion": {
+                                "titulo": "Tema 1 - Movimiento del mouse:",
+                                "descripcion": "El movimiento del mouse es crucial para la interaccion con una computadora. Al desplazar el mouse sobre una superficie plana, como una mesa, el cursor en la pantalla se mueve en la misma direccion; de igual forma, la velocidad del movimiento del cursor puede variar segun la rapidez del movimiento, en conjunto con las configuraciones del sistema y el propio mouse. El movimiento suave y fluido del mouse es esencial para realizar tareas con precision y rapidez en la computadora.",
+                                "imagen": "https://i.ibb.co/dQwsX9N/Cursor-Moviendose.gif"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Como se registra el movimiento del mouse en la pantalla de la computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Manteniendo pulsado el click izquierdo.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Por medio de la rueda del medio.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Por el movimiento del mouse en una superficie plana.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Por medio del teclado.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Que determina la velocidad del movimiento del cursor en la pantalla?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "La cantidad de RAM instalada en la computadora.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "La velocidad del movimiento del mouse.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "El tamaño del monitor.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Se define por medio del teclado.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Por que es importante tener un movimiento suave del mouse al interactuar con la computadora? (Mayor precision)",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Para evitar el desgaste del mouse.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Para reducir el consumo de energia.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Tener mayor precision y control.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Para evitar un alto consumo de recursos.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 2 - Uso del teclado:",
+                                "descripcion": "El teclado es un dispositivo de entrada esencial en una computadora que permite al usuario ingresar texto y realizar diversas acciones. Las teclas alfanumericas permiten ingresar letras, numeros y caracteres especiales, mientras que las teclas de funcion brindan acceso rapido a ciertas funciones del sistema o programas. Ademas, existen teclas de modificacion, como Shift, Ctrl y Alt, que, al combinarse con otras, pueden cambiar su representacion o llevar a cabo una funcion especifica. Por ejemplo, utilizar la tecla Shift junto a cualquier letra del abecedario, producira su correspondiente en mayuscula (o minuscula si el Bloq. Mayus esta activado); otro ejemplo en el contexto de escribir un documento, utilizar Ctrl y la tecla 'C', permite copiar el texto seleccionado y con Ctrl y la tecla 'V', pegarlo en el lugar deseado.",
+                                "imagen": "https://i.ibb.co/Yj79nQh/Teclado-en-uso.gif"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Que tipos de teclas se encuentran en un teclado estandar?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Alfanumericas y de modificacion.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Alfanumericas y de funcion.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "De funcion y de modificacion",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Alfanumericas, de funcion y de modificacion.",
+                                            "esCorrecta": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Cual es una funcion de las teclas de modificacion?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Controlar la velocidad del ventilador.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Realizar una funcion especifica dependiendo de la combinacion.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Ajustar el volumen del sonido.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Cambiar el color del texto.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Que permite realizar la combinacion de teclas en conjunto con las teclas de modificacion?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Diversas funciones especificas.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Reproducir una cancion aleatoria.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Cambiar el color del monitor.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "No realizan ninguna funcion.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 3 - Abrir y cerrar un programa:",
+                                "descripcion": "Abrir y cerrar programas es una tarea fundamental en el uso de una computadora. Para abrir un programa, el usuario puede hacer doble click en su icono en el escritorio o en el menu de inicio. Una vez abierto, el programa aparecera en la pantalla, listo para su uso. Para cerrar un programa, el usuario puede hacer clic en el boton de cierre ubicado en la esquina superior derecha de la ventana del programa. Cerrar los programas que no se estan utilizando ayuda a liberar recursos del sistema y mantener un rendimiento optimo de la computadora.",
+                                "imagen": "https://i.ibb.co/fqgBVTP/Abrir-y-cerrar-un-programa.gif"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Cuales son los pasos para abrir un programa en una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Hacer doble click en el icono del programa en el escritorio.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Seleccionar el programa y presionar la tecla Q.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Esperar a que se abra automaticamente.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Hacer un click en el icono del programa en el escritorio.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Como se cierra un programa que ya no se esta utilizando?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Pulsar simultaneamente las teclas Ctrl + Alt + Supr.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Hacer clic en el boton de cierre ubicado en la esquina superior de la ventana del programa.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Apagar la computadora.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Seleccionar el programa y presionar la tecla Q.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Por que es importante cerrar los programas que no se estan utilizando en una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Ayuda a liberar recursos de la computadora.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Evita que se pierdan los datos.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Permite ahorrar energia.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "No tiene ningun beneficio.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "nombre": "Leccion 2 - Explorador de archivos\n",
+                    "contenido_leccion": [
+                        {
+                            "informacion": {
+                                "titulo": "Tema 1 - ¿Que es el explorador de archivos?",
+                                "descripcion": "El explorador de archivos es una herramienta que permite visualizar los archivos y carpetas almacenados en una computadora, al igual que un archivero en la vida real. A traves del explorador de archivos, los usuarios pueden navegar por las carpetas de su sistema, ver la ubicacion y el nombre de sus archivos, asi como crear, copiar, mover y eliminar archivos y carpetas segun sea necesario.",
+                                "imagen": "https://i.ibb.co/7G7D5LG/Explorador-de-archivos.jpg"
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Que funcion cumple el explorador de archivos en una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Controla la temperatura del procesador.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Administra la conexion a internet.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Permite visualizar los archivos y carpetas almacenados en la computadora.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Permite seleccionar en cual monitor mostrar el programa ejecutado.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Que elementos se encuentran dentro del explorador de archivos?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Mensajes de correo electronico.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Configuraciones del sistema operativo.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Archivos y carpetas.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Programas recientemente ejecutados.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Que acciones se pueden realizar utilizando el explorador de archivos?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Enviar correos electronicos.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Editar unicamente documentos de texto.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Reproducir archivos de audio.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Crear, copiar, mover y eliminar archivos y carpetas.",
+                                            "esCorrecta": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 2 - Crear, Mover, Eliminar una carpeta",
+                                "descripcion": "Crear una carpeta en una computadora permite organizar archivos digitales dentro de un contenedor. Esto se logra mediante la seleccion de un espacio vacio en el sistema de archivos y por medio del click izquierdo, desplegar el menu contextual y dar click derecho a la opcion 'Crear Carpeta'. Mover una carpeta implica cambiar su ubicacion dentro del sistema de archivos, lo cual se realiza seleccionando la carpeta y arrastrandola a la ubicacion deseada. Eliminar una carpeta implica eliminarla permanentemente del sistema de archivos, liberando asi el espacio que ocupaba en el almacenamiento.",
+                                "imagen": ""
+                            },
+                            "preguntas": [
+                                {
+                                    "pregunta": "¿Como se crea una carpeta en una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Presionando la combinacion de teclas Ctrl + Alt + Supr.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Arrastrando un archivo a otro.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Presionando la tecla 'Crear' del teclado.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Haciendo clic derecho para desplegar el menu contextual y seleccionar la opcion 'Crear Carpeta'.",
+                                            "esCorrecta": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Cual es el proceso para mover una carpeta a una ubicacion diferente en el sistema de archivos?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "Seleccionar la carpeta y arrastrarla a la nueva ubicacion.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "Haciendo clic derecho sobre la carpeta y seleccionando 'Mover Carpeta'.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Duplicando la carpeta y eliminando la original.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "No se puede mover una carpeta, una vez creada.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "pregunta": "¿Que sucede cuando se elimina una carpeta de una computadora?",
+                                    "respuestas": [
+                                        {
+                                            "respuesta": "La carpeta se oculta, no se elimina.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "La carpeta se elimina del sistema de archivos.",
+                                            "esCorrecta": true
+                                        },
+                                        {
+                                            "respuesta": "La carpeta se vacia.",
+                                            "esCorrecta": false
+                                        },
+                                        {
+                                            "respuesta": "Se mueve la carpeta a un lugar donde se almacenan las carpetas no utilizadas.",
+                                            "esCorrecta": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 3 - Mover uno o varios elementos a una carpeta",
+                                "descripcion": "Mover uno o varios elementos a una carpeta implica seleccionar los elementos deseados y arrastrarlos a la carpeta de destino. Esto puede hacerse con archivos individuales o multiples archivos a la vez.",
+                                "imagen": ""
+                            }
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 4 - Copiar uno o varios elementos a una carpeta",
+                                "descripcion": "Copiar uno o varios elementos a una carpeta implica seleccionar los elementos deseados y copiarlos a la carpeta de destino sin eliminarlos de su ubicacion original. Esto se puede hacer utilizando el comando de copiar y pegar.",
+                                "imagen": ""
+                            }
+                        },
+                        {
+                            "informacion": {
+                                "titulo": "Tema 5 - Eliminar uno o varios elementos de una carpeta",
+                                "descripcion": "Eliminar uno o varios elementos de una carpeta implica seleccionar los elementos deseados y utilizar el comando de eliminar o presionar la tecla 'Suprimir' en el teclado o por medio de click derecho, en el menu contextual, seleccionar la opcion de eliminar. Esto eliminara los elementos seleccionados de la carpeta y los enviara a la papelera de reciclaje o papelera, donde pueden ser restaurados si es necesario.",
+                                "imagen": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
