@@ -36,7 +36,7 @@ export function ViewQuestions() {
                     <div className="gap-6">
                         {questions.map((question, index) => (
                             <div key={index} className="p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
-                                <div className="flex flex-col justify-center items-center">
+                                <div className="flex flex-col justify-center items-start">
                                     <a href={question.redirectUrl}>
                                         <img className="rounded-lg w-full h-auto" src={question.imageUrl} alt={question.altText} />
                                     </a>
