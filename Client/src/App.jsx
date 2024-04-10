@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/user" element={<ViewUser />} />
         <Route path="/menu" element={<MenuCurso />} />
-        <Route path="/lessons" element={<ViewLessons />} />
+        <Route path="/lessons/:clase/:id" element={<ViewLessons />} />
         <Route path="/questions/:clase/:id" element={<ViewQuestions />} />
 
         {/*Catch all*/}

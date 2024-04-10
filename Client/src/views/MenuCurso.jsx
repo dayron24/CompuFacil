@@ -13,7 +13,7 @@ export function MenuCurso() {
                     <div key={index} className="mx-4 mb-8 w-full flex justify-center items-center flex-col">
                         <h2 className="text-xl font-bold mb-4">{clase.nombre}</h2>
                         {clase.lecciones.map((leccion, lessonIndex) => (
-                            <a key={lessonIndex} href={`/questions/${index}/${lessonIndex}`} className="mb-2 inline-block w-1/3 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
+                            <a key={lessonIndex} href={`/lessons/${index}/${lessonIndex}`} className="mb-2 inline-block w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
                                 <h2 className="text-lg font-bold">{leccion.nombre}</h2>
                             </a>
                         ))}

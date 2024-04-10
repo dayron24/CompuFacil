@@ -1,19 +1,25 @@
 import React from 'react';
 import { Header } from '../components/Header';
 import { getLesson, getLessonContent } from "../api/tempData"
+import { useParams } from "react-router-dom";
+import testData from "../data/documento.json"
 
 export function ViewLessons() {
+
+    const { clase } = useParams();
+    const { id } = useParams();
+
+    const lesson = testData.clases[clase].lecciones[id].contenido_leccion[0];
+    const lesson_info = lesson.informacion;
+
     const itemInfo = {
-        name: 'Mouse',
-        imageUrl: '/src/img/mouse.jpg',
-        altText: 'Example Picture',
-        redirectUrl: '/questions',
-        text:'El mouse es un dispositivo de entrada diseñado para manipular objetos en la pantalla de la computadora y ayudarlo a usted, el usuario, a interactuar con la computadora.'
+        name: lesson_info.titulo,
+        imageUrl: lesson_info.imagen,
+        altText: lesson_info.titulo,
+        redirectUrl: `/questions/${clase}/${id}`,
+        text:lesson_info.descripcion,
     };
-
-    const lesson = getLesson(1, 1);
-    const lesson_info = getLessonContent(lesson, 1);
-
+    console.log(itemInfo);
     return (
         <div className="relative">
             <Header></Header>
@@ -21,15 +27,15 @@ export function ViewLessons() {
             <div className="px-6 py-8">
                 <div className="mb-5 flex">
                     <div className="mr-5 w-1/2 flex justify-center items-center ">
-                        <img className="w-80 h-80 rounded-lg" src={lesson_info.lesson_image} alt={itemInfo.altText} />
+                        <img className="w-80 h-80 rounded-lg" src={itemInfo.imageUrl} alt={itemInfo.altText} />
                     </div>
                     <div className="w-1/2 h-1/2 py-20">
-                        <p className="text-4xl font-bold mb-3"> {lesson_info.lesson_name}</p>
+                        <p className="text-4xl font-bold mb-3"> {itemInfo.name}</p>
                     </div>
                 </div>
 
                 <div className='px-20 py-20 bg-blue-900 rounded-lg'>
-                    <p className="text-3xl mb-3 text-white font-bold text-center "> {lesson_info.lesson_description} </p>
+                    <p className="text-3xl mb-3 text-white font-bold text-center "> {itemInfo.text} </p>
                 </div>
             </div>
             <div className="flex justify-center">
