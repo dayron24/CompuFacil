@@ -2,28 +2,33 @@ import { useNavigate, useLocation } from "react-router-dom";
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import testData from "../data/documento.json"
-import { getLesson, getLessonQuestions } from "../api/tempData"
+import { getLesson } from "../api/tempData"; 
+import { getLessonQuestions } from "../api/tempData";
+import { useParams } from "react-router-dom";
 
 export function ViewQuestions() {
-    const [selectedAnswers, setSelectedAnswers] = useState(new Array(testData.clases[0].lecciones[0].contenido_leccion[0].preguntas.length).fill('')); // Array para almacenar las respuestas seleccionadas por el usuario
+    const { clase } = useParams();
+    const { id } = useParams();
+    const [selectedAnswers, setSelectedAnswers] = useState(new Array(testData.clases[clase].lecciones[id].contenido_leccion[0].preguntas.length).fill('')); // Array para almacenar las respuestas seleccionadas por el usuario
 
     const questions = [];
 
-    const lesson = getLesson(1, 1);
-    const lesson_questions = getLessonQuestions(lesson, 1);
+    const lesson = testData.clases[clase].lecciones[id].contenido_leccion[0];
+    const lesson_questions = lesson.preguntas;
 
     for (let i = 0; i < lesson_questions.length; i++) {
         const question_info = lesson_questions[i];
 
         const question = {
             id: i,
-            title: question_info.question,
-            imageUrl: '/src/img/mouse.jpg',
+            title: question_info.pregunta,
+            imageUrl: lesson.informacion.imagen,
             altText: 'question 1 Image',
-            option1: question_info.answers[0].respuesta,
-            option2: question_info.answers[1].respuesta,
-            option3: question_info.answers[2].respuesta,
-            option4: question_info.answers[3].respuesta,
+            option1: question_info.respuestas[0].respuesta,
+            option2: question_info.respuestas[1].respuesta,
+            option3: question_info.respuestas[2].respuesta,
+            option4: question_info.respuestas[3].respuesta,
+            correctAnswer: question_info.respuestas.find(respuesta => respuesta.esCorrecta).respuesta,
             redirectUrl: '#'
         }
 
@@ -58,25 +63,25 @@ export function ViewQuestions() {
             }
         });
         alert(`Has obtenido ${correctCount} respuestas correctas de ${questions.length} totales.`);
-        navigate('/home');
+        navigate('/menu');
     }
 
     return (
         <div className="relative">
             <Header></Header>
     
-            <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline px-10">Examen:</h2>
+            
     
-            <div className="flex flex-col items-center mx-auto min-h-screen px-10 py-10">
-                <div className="gap-6">
+            <div className="flex flex-col justify-center items-center mx-auto min-h-screen px-10 py-10">
+            <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline px-10">Examen:</h2>
                     {questions.map((question, index) => (
-                        <div key={index} className="p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
+                        <div key={index} className="p-5 w-1/2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
                             <div className="flex flex-col justify-center items-start">
                                 <a href={question.redirectUrl}>
-                                    <img className="rounded-lg w-full h-auto" src={question.imageUrl} alt={question.altText} />
+                                    <img className="rounded-lg h-auto" src={question.imageUrl} alt={question.altText} />
                                 </a>
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">{question.title}</h5>
-                                <div className="text-1xl font-bold tracking-tight text-white py-5">
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-black">{question.title}</h5>
+                                <div className="text-1xl font-bold tracking-tight text-black py-5">
                                     <ul className="choices">
                                         <li>
                                             <label>
@@ -110,7 +115,7 @@ export function ViewQuestions() {
                             </div>
                         </div>
                     ))}
-                </div>
+              
             </div>
     
             <div className="flex justify-center">

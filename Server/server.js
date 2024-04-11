@@ -10,6 +10,14 @@ const path = require("path");
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 const PORT = process.env.PORT || 3000;
 
+// --------------------------------------------
+// Course content management - Imports
+const CourseRouter = require("./routes/content/Course.route");
+const LessonRouter = require("./routes/content/Lesson.route");
+const LessonContentRouter = require("./routes/content/LessonContent.route");
+const QuestionsRouter = require("./routes/content/Questions.route");
+// --------------------------------------------
+
 app.use(cors(corsOptions));
 
 // built-in middleware to handle urlencoded data
@@ -32,6 +40,14 @@ app.use("/login", require("./routes/api/userRouter"));
 
 app.use("/user", require("./routes/api/userRouter"));
 //app.use('/utilities', require('./routes/api/utilitiesRouter'));
+
+// --------------------------------------------
+// Course content management
+app.use("/course", CourseRouter);
+app.use("/lesson", LessonRouter);
+app.use("/lessonContent", LessonContentRouter);
+app.use("/questions", QuestionsRouter);
+// --------------------------------------------
 
 //custom middleware of error handling
 app.use(erorrHandler);
