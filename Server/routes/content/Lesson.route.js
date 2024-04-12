@@ -16,6 +16,11 @@ router.get('/:courseID', async (req, res) => {
         const result = await lessonModel
         .aggregate([
             {
+                $match: {
+                    course_id: new Types.ObjectId(courseID)
+                }
+            },
+            {
                 $lookup: {
                     from: "lessonContent",
                     localField: "_id",
@@ -26,7 +31,7 @@ router.get('/:courseID', async (req, res) => {
         ])
         .exec()
 
-        res.status(200).json(result.filter( (elem) => elem.course_id == courseID ));
+        res.status(200).json(result);
     } catch (error) {
         res.status(404).json([])
     }

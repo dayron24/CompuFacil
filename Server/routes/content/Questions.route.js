@@ -30,7 +30,8 @@ router.post('/', async (req, res) => {
     }
 
     const search_result_lessonContent = await lessonContentModel.findOne({
-        lesson_id: search_result_lesson._id
+        lesson_id: search_result_lesson._id,
+        lessonContent_number: body.req_lessonContent_id
     }).lean().exec();
 
     if (search_result_lessonContent == null) {

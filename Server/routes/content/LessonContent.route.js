@@ -62,6 +62,7 @@ router.post('/', async (req, res) => {
 
     const result = await lessonContentModel.create({
         lesson_id: search_result_lesson._id,
+        lessonContent_number: body.lessonContent_id,
         information: body.information
     })
 
