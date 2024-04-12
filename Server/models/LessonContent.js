@@ -7,6 +7,7 @@ const lessonContentScheme = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "lesson"
     },
+    lessonContent_number: Number,
     information: {
         title: String,
         description: String,
