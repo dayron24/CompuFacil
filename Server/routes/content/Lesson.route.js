@@ -2,6 +2,8 @@ const express = require("express");
 const courseModel = require("../../models/Course");
 const lessonModel = require("../../models/Lesson");
 
+const mongoose = require('mongoose');
+
 const router = express.Router();
 
 router.get('/:courseID', async (req, res) => {
@@ -17,7 +19,7 @@ router.get('/:courseID', async (req, res) => {
         .aggregate([
             {
                 $match: {
-                    course_id: new Types.ObjectId(courseID)
+                    course_id: new mongoose.Types.ObjectId(courseID)
                 }
             },
             {
