@@ -72,7 +72,7 @@ export function ViewQuestions() {
     
             
     
-            <div className="flex flex-col justify-center items-center mx-auto min-h-screen px-10 py-10">
+            <div className="flex flex-col justify-center items-center mx-auto gap-3 min-h-screen px-10 py-10">
             <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline px-10">Examen:</h2>
                     {questions.map((question, index) => (
                         <div key={index} className="p-5 w-1/2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
@@ -80,8 +80,8 @@ export function ViewQuestions() {
                                 <a href={question.redirectUrl}>
                                     <img className="rounded-lg h-auto" src={question.imageUrl} alt={question.altText} />
                                 </a>
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-black">{question.title}</h5>
-                                <div className="text-1xl font-bold tracking-tight text-black py-5">
+                                <h5 className="my-2 text-2xl font-bold tracking-tight text-slate-100">{question.title}</h5>
+                                <div className="text-1xl font-bold tracking-tight text-slate-100 py-5">
                                     <ul className="choices">
                                         <li>
                                             <label>
@@ -109,7 +109,7 @@ export function ViewQuestions() {
                                         </li>
                                     </ul>
                                 </div>
-                                <button onClick={() => Revisar(question)} className="inline-block w-3/4 items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-[#14453D] rounded-lg">
+                                <button onClick={() => Revisar(question)} className="inline-block w-full items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-[#14453D] rounded-lg">
                                     Revisar
                                 </button>
                             </div>
