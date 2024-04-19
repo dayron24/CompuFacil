@@ -1,20 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
 import testData from "../data/documento.json"
+import { useParams } from 'react-router';
+import axios from '../api/axios';
+
 export function MenuCurso() {
+    const [classes, setClasses] = useState([]);
+    const { id } = useParams();
     // Aquí debes tener tu JSON con la estructura proporcionada
-    const classes = testData.clases;
+    // const classes = testData.clases;
+
+    // Retrieve database data
+    useEffect(() => {
+        const fetchLessons = async () => {
+            try {
+                const response = await axios.get(`/lesson/${id}`);
+                setClasses(response.data);
+            } catch (error) {
+                console.error("Failed fetching DB data:", error);
+            }
+        };
+
+        fetchLessons();
+    }, [])
 
     return (
         <div className="relative">
             <Header />
             <div className="px-6 py-8 flex justify-center items-center flex-col">
-                {classes.map((clase, index) => (
+                {classes.map((selected_class, index) => (
                     <div key={index} className="mx-4 mb-8 w-full flex justify-center items-center flex-col">
-                        <h2 className="text-xl font-bold mb-4">{clase.nombre}</h2>
-                        {clase.lecciones.map((leccion, lessonIndex) => (
-                            <a key={lessonIndex} href={`/lessons/${index}/${lessonIndex}`} className="mb-2 inline-block w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
-                                <h2 className="text-lg font-bold">{leccion.nombre}</h2>
+                        <h2 className="text-xl font-bold mb-4">{selected_class.title}</h2>
+                        {selected_class.lessons.map((lesson, lessonIndex) => (
+                            <a key={lessonIndex} href={`/lessons/${lesson._id}`} className="mb-2 inline-block w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
+                                <h2 className="text-lg font-bold">{lesson.information.title}</h2>
                             </a>
                         ))}
                     </div>

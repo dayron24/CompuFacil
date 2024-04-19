@@ -1,95 +1,80 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
+import axios from '../api/axios';
+
+const checkLevelExistance = (level_str, levels) => {
+    for (let i = 0; i < levels.length; i++) {
+        const level = levels[i];
+
+        if (level["name"] == level_str) {
+            return level;
+        }
+    }
+
+    return {};
+}
+
+const fillTabsInfo = (data) => {
+    let result = [];
+
+    for (let i = 0; i < data.length; i++) {
+        const obj = data[i];
+
+        let levelObj = checkLevelExistance(`nivel${obj["level"]}`, result);
+
+        if (Object.keys(levelObj).length === 0) {
+            levelObj["name"] = `nivel${obj["level"]}`;
+            levelObj["label"] = `Nivel ${obj["level"]}`;
+            levelObj["cards"] = [];
+        }
+
+        levelObj["cards"].push(
+            {
+                id: obj["_id"],
+                title: obj["title"],
+                description: obj["description"],
+                imageUrl: obj["image"],
+                altText: `Card ${obj["course_number"]} Image`
+            }
+        );
+
+        if (levelObj["cards"].length <= 1) {
+            result.push( levelObj );
+        }
+    }
+
+    return result;
+}
+
 export function HomePage() {
     const [activeTab, setActiveTab] = useState('nivel0');
+    const [tabs, setTabs] = useState([]);
 
     const handleTabClick = (tabName) => {
         setActiveTab(tabName);
     };
 
-    const tabs = [
-        {
-            name: 'nivel0',
-            label: 'Nivel 0',
-            cards: [
-                {
-                    title: "Introducción al uso básico de una computadora",
-                    description: "Este curso proporciona una introducción fundamental al uso básico de una computadora, abarcando desde conceptos básicos hasta la realización de tareas comunes como la gestión de archivos y el uso de aplicaciones estándar. Ideal para quienes desean adquirir confianza y habilidades esenciales en el manejo de tecnología informática.",   
-                    imageUrl: "https://i.ibb.co/vs3MD2v/Portada-Curso-1.jpg",
-                    altText: 'Card 1 Image',
-                },
-                // {
-                //     title: 'Card 02',
-                //     description: 'Description for Card 2',
-                //     imageUrl: '/src/img/backgroundLogin.jpg',
-                //     altText: 'Card 2 Image',
-                // },
-                // Add more cards here
-            ]
-        },
-        {
-            name: 'nivel1',
-            label: 'Nivel 1',
-            cards: [
-                // {
-                //     title: 'Card 11',
-                //     description: 'Description for Card 1',
-                //     imageUrl: '/src/img/backgroundLogin.jpg',
-                //     altText: 'Card 1 Image',
-                // },
-                // {
-                //     title: 'Card 12',
-                //     description: 'Description for Card 2',
-                //     imageUrl: '/src/img/backgroundLogin.jpg',
-                //     altText: 'Card 2 Image',
-                // },
-                // Add more cards here
-            ]
-        },
-        {
-            name: 'nivel2',
-            label: 'Nivel 2',
-            cards: [
-                // {
-                //     title: 'Card 21',
-                //     description: 'Description for Card 1',
-                //     imageUrl: '/src/img/backgroundLogin.jpg',
-                //     altText: 'Card 1 Image',
-                // },
-                // {
-                //     title: 'Card 22',
-                //     description: 'Description for Card 2',
-                //     imageUrl: '/src/img/backgroundLogin.jpg',
-                //     altText: 'Card 2 Image',
-                // },
-                // Add more cards here
-            ]
-        },
-        {
-            name: 'nivel3',
-            label: 'Nivel 3',
-            cards: [
-                // {
-                //     title: 'Card 31',
-                //     description: 'Description for Card 1',
-                //     imageUrl: '/src/img/backgroundLogin.jpg',
-                //     altText: 'Card 1 Image',
-                // },
-                // {
-                //     title: 'Card 32',
-                //     description: 'Description for Card 2',
-                //     imageUrl: '/src/img/backgroundLogin.jpg',
-                //     altText: 'Card 2 Image',
-                // },
-                // Add more cards here
-            ]
-        },
-    ];
+    // Retrieve database data
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await axios.get("/course");
+                const result = fillTabsInfo(response.data);
+
+                setTabs(result);
+            } catch (error) {
+                console.error("Failed fetching DB data:", error);
+            }
+        };
+
+        fetchCourses();
+    }, [])
+
 
     const renderContent = () => {
         const currentTab = tabs.find(tab => tab.name === activeTab);
         if (!currentTab) return null;
-        
+
         return (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {currentTab.cards.map((card, index) => (
@@ -102,7 +87,7 @@ export function HomePage() {
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#0B2027] text-center">{card.title}</h5>
                             </a>
                             <p className="mb-3 font-normal text-[#586994]">{card.description}</p>
-                            <a href='/menu' className="inline-block w-full min-w-full max-w-xs items-center justify-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
+                            <a href={`/menu/${card.id}`} className="inline-block w-full min-w-full max-w-xs items-center justify-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
                                 Iniciar curso
                             </a>
                         </div>

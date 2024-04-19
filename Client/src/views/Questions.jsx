@@ -1,55 +1,111 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
 import testData from "../data/documento.json"
-import { getLesson } from "../api/tempData"; 
+import { getLesson } from "../api/tempData";
 import { getLessonQuestions } from "../api/tempData";
 import { useParams } from "react-router-dom";
 
-export function ViewQuestions() {
-    const { clase } = useParams();
-    const { id } = useParams();
-    const [selectedAnswers, setSelectedAnswers] = useState(new Array(testData.clases[clase].lecciones[id].contenido_leccion[0].preguntas.length).fill('')); // Array para almacenar las respuestas seleccionadas por el usuario
+import axios from '../api/axios';
 
-    const questions = [];
+const fillQuestions = (data) => {
 
-    const lesson = testData.clases[clase].lecciones[id].contenido_leccion[0];
-    const lesson_questions = lesson.preguntas;
+    const questions = data["questions"];
+    let result = [];
 
-    for (let i = 0; i < lesson_questions.length; i++) {
-        const question_info = lesson_questions[i];
-
-        const question = {
-            id: i,
-            title: question_info.pregunta,
-            imageUrl: lesson.informacion.imagen,
-            altText: 'question 1 Image',
-            option1: question_info.respuestas[0].respuesta,
-            option2: question_info.respuestas[1].respuesta,
-            option3: question_info.respuestas[2].respuesta,
-            option4: question_info.respuestas[3].respuesta,
-            correctAnswer: question_info.respuestas.find(respuesta => respuesta.esCorrecta).respuesta,
-            redirectUrl: '#'
-        }
-
-        questions.push(question)
+    for (let i = 0; i < questions.length; i++) {
+        result.push({
+            title: data["information"]["title"],
+            image: data["information"]["image"],
+            description: questions[i]["question"],
+            answers: questions[i]["answers"],
+            id: questions[i]["_id"],
+        })
     }
 
-    const handleAnswerChange = (questionIndex, selectedOption) => {
-        const updatedAnswers = [...selectedAnswers];
-        updatedAnswers[questionIndex] = selectedOption;
+    return result;
+}
+
+export function ViewQuestions() {
+    const [questions, setQuestions] = useState([]);
+    const { id } = useParams();
+    const [selectedAnswers, setSelectedAnswers] = useState([]); // Array para almacenar las respuestas seleccionadas por el usuario
+
+    // Retrieve database data
+    useEffect(() => {
+        const fetchLessonContent = async () => {
+            try {
+                const response = await axios.get(`/lessonContent/${id}`);
+                const result = fillQuestions(response.data);
+
+                console.log(result)
+                setQuestions(result)
+            } catch (error) {
+                console.error("Failed fetching DB data:", error);
+            }
+        };
+
+        fetchLessonContent();
+    }, [])
+
+    // const questions = [];
+
+    // const lesson = testData.clases[0].lecciones[0].contenido_leccion[0];
+    // const lesson_questions = lesson.preguntas;
+
+    // for (let i = 0; i < lesson_questions.length; i++) {
+    //     const question_info = lesson_questions[i];
+
+    //     const question = {
+    //         id: i,
+    //         title: question_info.pregunta,
+    //         imageUrl: lesson.informacion.imagen,
+    //         altText: 'question 1 Image',
+    //         option1: question_info.respuestas[0].respuesta,
+    //         option2: question_info.respuestas[1].respuesta,
+    //         option3: question_info.respuestas[2].respuesta,
+    //         option4: question_info.respuestas[3].respuesta,
+    //         correctAnswer: question_info.respuestas.find(respuesta => respuesta.esCorrecta).respuesta,
+    //         redirectUrl: '#'
+    //     }
+
+    //     questions.push(question)
+    // }
+
+
+    const handleAnswerChange = (questionID, selectedOption) => {
+        let updatedAnswers = [...selectedAnswers];
+        let elementFound = false;
+
+        for (let i = 0; i < selectedAnswers.length; i++) {
+            const element = selectedAnswers[i];
+
+            if (element.id == questionID) {
+                elementFound = true;
+                updatedAnswers[i].answer = selectedOption;
+                break;
+            }
+        }
+
+        if (!elementFound) {
+            updatedAnswers.push({
+                id: questionID,
+                answer: selectedOption
+            })
+        }
+
         setSelectedAnswers(updatedAnswers);
     }
 
     const Revisar = (question) => {
-        const index = question.id;
-        const correctAnswer = questions[index].correctAnswer;
-        const selectedAnswer = selectedAnswers[index];
 
-        if (selectedAnswer === correctAnswer) {
-            alert(`¡Bien, Respuesta Correcta en la pregunta #${index + 1}!`);
+        const questionID = question.id;
+        let selectedAnswer = selectedAnswers.find((answer) => answer.id == questionID);
+
+        if (selectedAnswer.answer && selectedAnswer.answer.isCorrect) {
+            alert(`¡Bien, Respuesta Correcta!`);
         } else {
-            alert(`¡Intentalo de nuevo, respuesta incorrecta en la pregunta #${index + 1}.`);// La respuesta correcta es: ${correctAnswer}`);
+            alert(`¡Intentalo de nuevo, respuesta incorrecta.`);// La respuesta correcta es: ${correctAnswer}`);
         }
     }
 
@@ -57,54 +113,54 @@ export function ViewQuestions() {
 
     const Finalizar = () => {
         let correctCount = 0;
-        questions.forEach((question, index) => {
-            if (selectedAnswers[index] === question.correctAnswer) {
+
+        selectedAnswers.forEach((select_answer) => {
+            if (select_answer.answer.isCorrect) {
                 correctCount++;
             }
-        });
+        })
+
         alert(`Has obtenido ${correctCount} respuestas correctas de ${questions.length} totales.`);
-        navigate('/menu');
+        navigate('/home');
     }
 
     return (
         <div className="relative">
             <Header></Header>
-    
-            
-    
+
             <div className="flex flex-col justify-center items-center mx-auto gap-3 min-h-screen px-10 py-10">
-            <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline px-10">Examen:</h2>
+            <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline px-10">Examen</h2>
                     {questions.map((question, index) => (
                         <div key={index} className="p-5 w-1/2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
                             <div className="flex flex-col justify-center items-start">
-                                <a href={question.redirectUrl}>
-                                    <img className="rounded-lg h-auto" src={question.imageUrl} alt={question.altText} />
+                                <a href={`#`}>
+                                    <img className="rounded-lg h-auto" src={question.image} alt={question.title} />
                                 </a>
-                                <h5 className="my-2 text-2xl font-bold tracking-tight text-slate-100">{question.title}</h5>
+                                <h5 className="my-2 text-2xl font-bold tracking-tight text-slate-100">{question.description}</h5>
                                 <div className="text-1xl font-bold tracking-tight text-slate-100 py-5">
                                     <ul className="choices">
                                         <li>
                                             <label>
-                                                <input type="radio" name={question.id} value="A" onChange={() => handleAnswerChange(index, question.option1)} />
-                                                {question.option1}
+                                                <input type="radio" name={question.id} value="A" onChange={() => handleAnswerChange(question.id, question.answers[0])} />
+                                                {question.answers[0].answer}
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="radio" name={question.id} value="B" onChange={() => handleAnswerChange(index, question.option2)} />
-                                                {question.option2}
+                                                <input type="radio" name={question.id} value="B" onChange={() => handleAnswerChange(question.id, question.answers[1])} />
+                                                {question.answers[1].answer}
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="radio" name={question.id} value="C" onChange={() => handleAnswerChange(index, question.option3)} />
-                                                {question.option3}
+                                                <input type="radio" name={question.id} value="C" onChange={() => handleAnswerChange(question.id, question.answers[2])} />
+                                                {question.answers[2].answer}
                                             </label>
                                         </li>
                                         <li>
                                             <label>
-                                                <input type="radio" name={question.id} value="D" onChange={() => handleAnswerChange(index, question.option4)} />
-                                                {question.option4}
+                                                <input type="radio" name={question.id} value="D" onChange={() => handleAnswerChange(question.id, question.answers[3])} />
+                                                {question.answers[3].answer}
                                             </label>
                                         </li>
                                     </ul>

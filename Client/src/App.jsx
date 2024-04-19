@@ -24,9 +24,9 @@ export default function App() {
         <Route path="/inicio" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/user" element={<ViewUser />} />
-        <Route path="/menu" element={<MenuCurso />} />
-        <Route path="/lessons/:clase/:id" element={<ViewLessons />} />
-        <Route path="/questions/:clase/:id" element={<ViewQuestions />} />
+        <Route path="/menu/:id" element={<MenuCurso />} />
+        <Route path="/lessons/:id" element={<ViewLessons />} />
+        <Route path="/questions/:id" element={<ViewQuestions />} />
 
         {/*Catch all*/}
         <Route path="*" element={<h1>404 error</h1>} />
