@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
+import { Spinner } from '../components/Spinner';
 import testData from "../data/documento.json"
 import { getLesson } from "../api/tempData";
 import { getLessonQuestions } from "../api/tempData";
@@ -38,7 +39,6 @@ export function ViewQuestions() {
                 const response = await axios.get(`/lessonContent/${id}`);
                 const result = fillQuestions(response.data);
 
-                console.log(result)
                 setQuestions(result)
             } catch (error) {
                 console.error("Failed fetching DB data:", error);
@@ -129,61 +129,71 @@ export function ViewQuestions() {
             <Header></Header>
 
             <div className="flex flex-col justify-center items-center mx-auto gap-3 min-h-screen px-10 py-10">
-            <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline px-10">Examen</h2>
-                    {questions.map((question, index) => (
-                        <div key={index} className="p-5 w-1/2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
-                            <div className="flex flex-col justify-center items-start">
-                                <a href={`#`}>
-                                    <img className="rounded-lg h-auto" src={question.image} alt={question.title} />
-                                </a>
-                                <h5 className="my-2 text-2xl font-bold tracking-tight text-slate-100">{question.description}</h5>
-                                <div className="text-1xl font-bold tracking-tight text-slate-100 py-5">
-                                    <ul className="choices">
-                                        <li>
-                                            <label>
-                                                <input type="radio" name={question.id} value="A" onChange={() => handleAnswerChange(question.id, question.answers[0])} />
-                                                {question.answers[0].answer}
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label>
-                                                <input type="radio" name={question.id} value="B" onChange={() => handleAnswerChange(question.id, question.answers[1])} />
-                                                {question.answers[1].answer}
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label>
-                                                <input type="radio" name={question.id} value="C" onChange={() => handleAnswerChange(question.id, question.answers[2])} />
-                                                {question.answers[2].answer}
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label>
-                                                <input type="radio" name={question.id} value="D" onChange={() => handleAnswerChange(question.id, question.answers[3])} />
-                                                {question.answers[3].answer}
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <button onClick={() => Revisar(question)} className="inline-block w-full items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-[#14453D] rounded-lg">
-                                    Revisar
-                                </button>
-                            </div>
+
+                {
+                    (questions.length <= 0) ? (
+                        <div className='flex flex-col items-center justify-center min-h-screen'>
+                            <Spinner></Spinner>
                         </div>
-                    ))}
-              
-            </div>
-    
-            <div className="flex justify-center">
-                <div className="max-w-full h-full py-5">
-                <button
-                    onClick={Finalizar}
-                    className="justify-center text-white bg-gradient-to-r from-teal-700 to-cyan-950 font-medium rounded-lg text-md px-5 py-2.5 text-center 
+                    ) : (
+                        <>
+                            <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline px-10">Examen</h2>
+                            {questions.map((question, index) => (
+                                <div key={index} className="p-5 w-1/2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
+                                    <div className="flex flex-col justify-center items-start">
+                                        <a href={`#`} className="w-full">
+                                            <img className="rounded-lg w-full" src={question.image} alt={question.title} />
+                                        </a>
+                                        <h5 className="my-2 text-2xl font-bold tracking-tight text-slate-100">{question.description}</h5>
+                                        <div className="text-1xl font-bold tracking-tight text-slate-100 py-5">
+                                            <ul className="choices">
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" name={question.id} value="A" onChange={() => handleAnswerChange(question.id, question.answers[0])} />
+                                                        {question.answers[0].answer}
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" name={question.id} value="B" onChange={() => handleAnswerChange(question.id, question.answers[1])} />
+                                                        {question.answers[1].answer}
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" name={question.id} value="C" onChange={() => handleAnswerChange(question.id, question.answers[2])} />
+                                                        {question.answers[2].answer}
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" name={question.id} value="D" onChange={() => handleAnswerChange(question.id, question.answers[3])} />
+                                                        {question.answers[3].answer}
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button onClick={() => Revisar(question)} className="inline-block w-full items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-[#14453D] rounded-lg">
+                                            Revisar
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                            <div className="flex justify-center">
+                                <div className="max-w-full h-full py-5">
+                                    <button
+                                        onClick={Finalizar}
+                                        className="justify-center text-white bg-gradient-to-r from-teal-700 to-cyan-950 font-medium rounded-lg text-md px-5 py-2.5 text-center 
                         hover:bg-gradient-to-r hover:from-teal-600 hover:to-cyan-800 hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
-                >
-                    Finalizar
-                </button>
-                </div>
+                                    >
+                                        Finalizar
+                                    </button>
+                                </div>
+                            </div>
+                        </>
+                    )
+                }
+
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
+import { Spinner } from '../components/Spinner';
 import testData from "../data/documento.json"
 import { useParams } from 'react-router';
 import axios from '../api/axios';
@@ -27,17 +28,27 @@ export function MenuCurso() {
     return (
         <div className="relative">
             <Header />
-            <div className="px-6 py-8 flex justify-center items-center flex-col">
-                {classes.map((selected_class, index) => (
-                    <div key={index} className="mx-4 mb-8 w-full flex justify-center items-center flex-col">
-                        <h2 className="text-xl font-bold mb-4">{selected_class.title}</h2>
-                        {selected_class.lessons.map((lesson, lessonIndex) => (
-                            <a key={lessonIndex} href={`/lessons/${lesson._id}`} className="mb-2 inline-block w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
-                                <h2 className="text-lg font-bold">{lesson.information.title}</h2>
-                            </a>
-                        ))}
-                    </div>
-                ))}
+            <div className={`px-6 py-8 flex justify-center items-center flex-col ${classes.length <= 0 ? "min-h-screen" : ""}`}>
+                {
+                    (classes.length <= 0) ? (
+                        <Spinner></Spinner>
+                    ) : (
+                        <>
+                            {
+                                classes.map((selected_class, index) => (
+                                    <div key={index} className="mx-4 mb-8 w-full flex justify-center items-center flex-col">
+                                        <h2 className="text-xl font-bold mb-4">{selected_class.title}</h2>
+                                        {selected_class.lessons.map((lesson, lessonIndex) => (
+                                            <a key={lessonIndex} href={`/lessons/${lesson._id}`} className="mb-2 inline-block w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
+                                                <h2 className="text-lg font-bold">{lesson.information.title}</h2>
+                                            </a>
+                                        ))}
+                                    </div>
+                                ))
+                            }
+                        </>
+                    )
+                }
             </div>
         </div>
     );
