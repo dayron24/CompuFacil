@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
 import { Spinner } from '../components/Spinner';
-import { getLesson, getLessonContent } from "../api/tempData"
 import { useParams } from "react-router-dom";
-import testData from "../data/documento.json"
 
 import axios from '../api/axios';
 
@@ -24,7 +22,20 @@ export function ViewLessons() {
             }
         };
 
+        const saveUserCourse = async () => {
+            try {
+                const body = {
+                    courseID: sessionStorage.getItem("last_course"),
+                    userID: sessionStorage.getItem("user_id")
+                };
+                await axios.post(`/course/saveCourse`, body);
+            } catch (error) {
+                console.error("Failed saving user course:", error);
+            }
+        }
+
         fetchLessonContent();
+        saveUserCourse();
     }, [])
 
     return (
