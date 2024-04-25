@@ -32,7 +32,7 @@ export function LoginPage() {
   const loginUser = async (e) => {
     e.preventDefault();
     try {
-      console.log(email, password);
+      // console.log(email, password);
       const response = await axios.post(
         LOGIN_URL,
         JSON.stringify({ email, password }),
@@ -40,13 +40,18 @@ export function LoginPage() {
           headers: { "Content-Type": "application/json" },
         }
       );
-      console.log(JSON.stringify(response?.data));
+
+      if (response.data) {
+        sessionStorage.setItem("user_id", response.data.id);
+      }
+
+      // console.log(JSON.stringify(response?.data));
       //console.log(JSON.stringify(response));
       // const accessToken = response?.data?.accessToken;
       let roles = response?.data?.roles;
       let name = response?.data?.name;
       let photo = response?.data?.photo;
-      console.log(roles);
+      // console.log(roles);
       setAuth({name,photo,email, password, roles: [roles[0]]});
       setEmail("");
       setPassword("");
