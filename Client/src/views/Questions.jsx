@@ -2,9 +2,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
 import { Spinner } from '../components/Spinner';
-import testData from "../data/documento.json"
-import { getLesson } from "../api/tempData";
-import { getLessonQuestions } from "../api/tempData";
 import { useParams } from "react-router-dom";
 
 import axios from '../api/axios';
@@ -47,31 +44,6 @@ export function ViewQuestions() {
 
         fetchLessonContent();
     }, [])
-
-    // const questions = [];
-
-    // const lesson = testData.clases[0].lecciones[0].contenido_leccion[0];
-    // const lesson_questions = lesson.preguntas;
-
-    // for (let i = 0; i < lesson_questions.length; i++) {
-    //     const question_info = lesson_questions[i];
-
-    //     const question = {
-    //         id: i,
-    //         title: question_info.pregunta,
-    //         imageUrl: lesson.informacion.imagen,
-    //         altText: 'question 1 Image',
-    //         option1: question_info.respuestas[0].respuesta,
-    //         option2: question_info.respuestas[1].respuesta,
-    //         option3: question_info.respuestas[2].respuesta,
-    //         option4: question_info.respuestas[3].respuesta,
-    //         correctAnswer: question_info.respuestas.find(respuesta => respuesta.esCorrecta).respuesta,
-    //         redirectUrl: '#'
-    //     }
-
-    //     questions.push(question)
-    // }
-
 
     const handleAnswerChange = (questionID, selectedOption) => {
         let updatedAnswers = [...selectedAnswers];
