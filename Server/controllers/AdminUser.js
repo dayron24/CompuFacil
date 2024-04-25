@@ -1,5 +1,6 @@
 const SingletonDAO = require("../controllers/SingeltonDAO");
 const User = require("../models/User");
+const CourseModel = require("../models/Course");
 const bcrypt = require("bcrypt");
 
 const loginUser = async (req, res, next) => {
@@ -95,6 +96,34 @@ const verifyToken = async (req, res, next) => {
 };
 
 
+const getUserInformation = async (req, res, next) => {
+  const { userID } = req.body;
+
+  const result_user = await User.findById(userID);
+
+  if (!result_user) {
+    return res.status(404).json({error: "User not found"});
+  }
+
+  const coursesInfo = [];
+
+  for (const courseId of result_user.courses) {
+    const courseInfo = await CourseModel.findById(courseId);
+    coursesInfo.push({
+      id: courseId,
+      title: courseInfo.title,
+      image: courseInfo.image
+    });
+  }
+  res.status(200).json({
+    name: `${result_user.name} ${result_user.lastName1 || ""} ${result_user.lastName2 || ""}`,
+    email: result_user.email,
+    photo: result_user.photo,
+    courses: coursesInfo
+  })
+};
+
+
 module.exports = {
   loginUser,
   registerUser,
@@ -102,5 +131,5 @@ module.exports = {
   verifyToken,
   profile,
   logout,
-
+  getUserInformation,
 };

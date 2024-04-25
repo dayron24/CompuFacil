@@ -14,6 +14,9 @@ router.route("/verifyToken").get(adminUserControllers.verifyToken);
 router.route("/profile").get(authRequire, adminUserControllers.profile);
 router.route("/logout").put(adminUserControllers.logout);
 
+// Get user information => Method for user page
+router.route("/getInformation").post(adminUserControllers.getUserInformation)
+
 //Nota para el editar perfil se debe de tener el authRequiere
 
 module.exports = router;

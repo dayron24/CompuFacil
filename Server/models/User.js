@@ -32,11 +32,12 @@ const userSchema = new mongoose.Schema({
         required: false
     },
     roles: {
-        type: Number, 
+        type: Number,
         required: true
-         
-
-    }
+    },
+    courses: [{
+        type: String
+    }]
 }, { collection: 'user' });
 
 

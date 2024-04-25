@@ -53,6 +53,7 @@ class SingletonDAO {
           res.cookie("token", token);
 
           res.status(200).json({
+            id: userFound._id,
             status: true,
             name: userFound.name,
             photo: userFound.photo,
