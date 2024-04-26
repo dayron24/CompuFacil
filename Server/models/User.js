@@ -37,6 +37,7 @@ const userSchema = new mongoose.Schema({
     },
     courses: [{
         courseId: String,
+        total_lessons: Number,
         completed_lessons: [{
             type: String
         }]

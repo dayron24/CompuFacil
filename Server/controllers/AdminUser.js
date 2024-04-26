@@ -108,27 +108,15 @@ const getUserInformation = async (req, res, next) => {
   }
 
   const coursesInfo = [];
-  let totalLessons = 0;
 
   for (const courseObj of result_user.courses) {
-    totalLessons = 0;
     const courseInfo = await CourseModel.findById(courseObj.courseId);
-    const lessonInfo = await LessonModel.find({ course_id: courseObj.courseId });
-
-    for (const lesson of lessonInfo) {
-      const lessonContentInfo = await LessonContentModel.
-        find( { lesson_id: lesson.id } ).
-        populate("lesson_id").
-        exec();
-
-        totalLessons += lessonContentInfo.length;
-    }
 
     coursesInfo.push({
       id: courseObj.courseId,
       title: courseInfo.title,
       image: courseInfo.image,
-      totalLessons: totalLessons,
+      totalLessons: courseObj.total_lessons,
       completedLessons: courseObj.completed_lessons.length
     });
   }

@@ -20,25 +20,19 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/saveCourse', async (req, res) => {
-    const { courseID, userID } = req.body;
+    const { courseID, userID, total_lessons } = req.body;
 
-    if (!courseID || !userID) {
+    if (!courseID || !userID || !total_lessons) {
         res.status(401).json({ error: "Ids not specified" })
         return;
     }
 
-    // const result = await userModel.findByIdAndUpdate(userID, {
-    //     $addToSet: { courses: { $each: [{ courseId: courseID }] } }
-    // });
     const result = await userModel.findOneAndUpdate(
         { _id: new mongoose.Types.ObjectId(String(userID)), "courses.courseId": { $ne: courseID } },
-        { $push: { courses: { courseId: courseID, completed_lessons: [] } } },
+        { $push: { courses: { courseId: courseID, total_lessons: total_lessons, completed_lessons: [] } } },
         { new: true }
     );
 
-    // console.log(result);
-
-    // console.log(courseID, userID);
     res.status(200).json(result)
 });
 
