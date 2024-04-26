@@ -26,7 +26,8 @@ export function ViewLessons() {
             try {
                 const body = {
                     courseID: sessionStorage.getItem("last_course"),
-                    userID: sessionStorage.getItem("user_id")
+                    userID: sessionStorage.getItem("user_id"),
+                    total_lessons: sessionStorage.getItem("totalLessons")
                 };
                 await axios.post(`/course/saveCourse`, body);
             } catch (error) {

@@ -15,9 +15,16 @@ export function MenuCurso() {
     // Retrieve database data
     useEffect(() => {
         const fetchLessons = async () => {
+            let total_lessons = 0;
             try {
                 const response = await axios.get(`/lesson/${id}`);
                 setClasses(response.data);
+
+                for (const lesson of response.data) {
+                    total_lessons += lesson.lessons.length;
+                }
+                sessionStorage.setItem("totalLessons", total_lessons);
+
             } catch (error) {
                 console.error("Failed fetching DB data:", error);
             }
