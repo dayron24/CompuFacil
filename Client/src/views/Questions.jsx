@@ -83,7 +83,22 @@ export function ViewQuestions() {
 
     const navigate = useNavigate();
 
-    const Finalizar = () => {
+    const saveFinishedCourse = async () => {
+        // Update finished courses
+        try {
+            const body = {
+                courseID: sessionStorage.getItem("last_course"),
+                userID: sessionStorage.getItem("user_id"),
+                lessonID: id
+            };
+
+            await axios.put(`/course/updateCompletedCourses`, body);
+        } catch (error) {
+            console.error("Failed saving user course:", error);
+        }
+    }
+
+    const Finalizar = async () => {
         let correctCount = 0;
 
         selectedAnswers.forEach((select_answer) => {
@@ -91,6 +106,8 @@ export function ViewQuestions() {
                 correctCount++;
             }
         })
+
+        await saveFinishedCourse();
 
         alert(`Has obtenido ${correctCount} respuestas correctas de ${questions.length} totales.`);
         navigate('/home');

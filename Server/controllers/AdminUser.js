@@ -1,6 +1,8 @@
 const SingletonDAO = require("../controllers/SingeltonDAO");
 const User = require("../models/User");
 const CourseModel = require("../models/Course");
+const LessonModel = require("../models/Lesson");
+const LessonContentModel = require("../models/LessonContent");
 const bcrypt = require("bcrypt");
 
 const loginUser = async (req, res, next) => {
@@ -106,15 +108,31 @@ const getUserInformation = async (req, res, next) => {
   }
 
   const coursesInfo = [];
+  let totalLessons = 0;
 
-  for (const courseId of result_user.courses) {
-    const courseInfo = await CourseModel.findById(courseId);
+  for (const courseObj of result_user.courses) {
+    totalLessons = 0;
+    const courseInfo = await CourseModel.findById(courseObj.courseId);
+    const lessonInfo = await LessonModel.find({ course_id: courseObj.courseId });
+
+    for (const lesson of lessonInfo) {
+      const lessonContentInfo = await LessonContentModel.
+        find( { lesson_id: lesson.id } ).
+        populate("lesson_id").
+        exec();
+
+        totalLessons += lessonContentInfo.length;
+    }
+
     coursesInfo.push({
-      id: courseId,
+      id: courseObj.courseId,
       title: courseInfo.title,
-      image: courseInfo.image
+      image: courseInfo.image,
+      totalLessons: totalLessons,
+      completedLessons: courseObj.completed_lessons.length
     });
   }
+
   res.status(200).json({
     name: `${result_user.name} ${result_user.lastName1 || ""} ${result_user.lastName2 || ""}`,
     email: result_user.email,
