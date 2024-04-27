@@ -36,7 +36,11 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     courses: [{
-        type: String
+        courseId: String,
+        total_lessons: Number,
+        completed_lessons: [{
+            type: String
+        }]
     }]
 }, { collection: 'user' });
 

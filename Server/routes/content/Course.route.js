@@ -20,22 +20,37 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/saveCourse', async (req, res) => {
-    const { courseID, userID } = req.body;
+    const { courseID, userID, total_lessons } = req.body;
 
-    if (!courseID || !userID) {
+    if (!courseID || !userID || !total_lessons) {
         res.status(401).json({ error: "Ids not specified" })
         return;
     }
 
-    const result = await userModel.findByIdAndUpdate(userID, {
-        $addToSet: { courses: courseID }
-    });
+    const result = await userModel.findOneAndUpdate(
+        { _id: new mongoose.Types.ObjectId(String(userID)), "courses.courseId": { $ne: courseID } },
+        { $push: { courses: { courseId: courseID, total_lessons: total_lessons, completed_lessons: [] } } },
+        { new: true }
+    );
 
-    console.log(result);
-
-    console.log(courseID, userID);
-    res.status(200).json({})
-
+    res.status(200).json(result)
 });
+
+router.put('/updateCompletedCourses', async (req, res) => {
+    const { courseID, userID, lessonID } = req.body;
+
+    if (!courseID || !userID || !lessonID) {
+        res.status(401).json({ error: "Ids not specified" })
+        return;
+    }
+
+    const result = await userModel.findOneAndUpdate(
+        { _id: new mongoose.Types.ObjectId(String(userID)), "courses.courseId": { $eq: courseID } },
+        { $addToSet: { "courses.$.completed_lessons": lessonID } },
+        { new: true }
+    );
+
+    res.status(200).json(result)
+})
 
 module.exports = router;

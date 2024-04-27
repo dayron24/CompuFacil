@@ -65,18 +65,25 @@ export function ViewUser() {
                         ) : (
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {coursesList.map((course, index) => (
-                                    <div key={index} className="p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
-                                        <div className="flex-shrink-0 mr-5 w-1/2">
-                                            <a href={`/menu/${course.id}`}>
-                                                <img className="rounded-lg w-full h-auto" src={course.image} alt={course.title} />
-                                            </a>
+                                    <div key={index} className="p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
+                                        <div className='flex mb-5'>
+                                            <div className="flex-shrink-0 mr-5 w-1/2">
+                                                <a href={`/menu/${course.id}`}>
+                                                    <img className="rounded-lg w-full h-auto" src={course.image} alt={course.title} />
+                                                </a>
+                                            </div>
+                                            <div className="flex flex-col justify-center items-center w-1/2">
+                                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#ffffff]">{course.title}</h5>
+
+                                                <span className='font-bold tracking-tight text-[#ffffff]'>Progreso del curso:</span>
+                                                <div className="w-full h-fit bg-gray-200 rounded-full dark:bg-gray-700">
+                                                    <div className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{width: `${(course.completedLessons/course.totalLessons) * 100}%`}}>{`${(course.completedLessons/course.totalLessons) * 100}%`}</div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="flex flex-col justify-center items-center w-1/2">
-                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#ffffff]">{course.title}</h5>
-                                            <a href={`/menu/${course.id}`} className="inline-block w-full items-center justify-center px-3 py-2 text-md font-medium text-center text-white bg-[#14453D] rounded-lg">
-                                                Continuar
-                                            </a>
-                                        </div>
+                                        <a href={`/menu/${course.id}`} className="inline-block w-full items-center justify-center px-3 py-2 text-md font-medium text-center text-white bg-[#14453D] rounded-lg">
+                                            Continuar
+                                        </a>
                                     </div>
                                 ))}
                             </div>
