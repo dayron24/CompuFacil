@@ -2,6 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
 import { Spinner } from '../components/Spinner';
+import { Modal_TotalPoints } from '../components/Modal_TotalPoints';
 import { useParams } from "react-router-dom";
 
 import axios from '../api/axios';
@@ -29,6 +30,13 @@ export function ViewQuestions() {
     const { id } = useParams();
     const [selectedAnswers, setSelectedAnswers] = useState([]); // Array para almacenar las respuestas seleccionadas por el usuario
 
+    const [showModalResult, setShowModalResult] = useState(false);
+    const [finalTestResult, setFinalTestResult] = useState({
+        correctCount: 0,
+        totalQuestion: 0,
+        state: "hidden"
+    })
+
     // Retrieve database data
     useEffect(() => {
         const fetchLessonContent = async () => {
@@ -45,7 +53,7 @@ export function ViewQuestions() {
         fetchLessonContent();
     }, [])
 
-    const handleAnswerChange = (questionID, selectedOption) => {
+    const handleAnswerChange = (questionID, selectedOption, html_elementID) => {
         let updatedAnswers = [...selectedAnswers];
         let elementFound = false;
 
@@ -55,6 +63,7 @@ export function ViewQuestions() {
             if (element.id == questionID) {
                 elementFound = true;
                 updatedAnswers[i].answer = selectedOption;
+                updatedAnswers[i].html_Element = html_elementID;
                 break;
             }
         }
@@ -62,7 +71,8 @@ export function ViewQuestions() {
         if (!elementFound) {
             updatedAnswers.push({
                 id: questionID,
-                answer: selectedOption
+                answer: selectedOption,
+                html_Element: html_elementID
             })
         }
 
@@ -72,13 +82,26 @@ export function ViewQuestions() {
     const Revisar = (question) => {
 
         const questionID = question.id;
-        let selectedAnswer = selectedAnswers.find((answer) => answer.id == questionID);
+        const selectedAnswer = selectedAnswers.find((answer) => answer.id == questionID);
+
+        if (!selectedAnswer) {
+            return;
+        }
+
+        const selectedOption = document.getElementById(selectedAnswer.html_Element);
 
         if (selectedAnswer.answer && selectedAnswer.answer.isCorrect) {
-            alert(`¡Bien, Respuesta Correcta!`);
+            selectedOption.style.backgroundColor = '#adffa280'
+            selectedOption.classList.add("animate-pulse");
         } else {
-            alert(`¡Intentalo de nuevo, respuesta incorrecta.`);// La respuesta correcta es: ${correctAnswer}`);
+            selectedOption.style.backgroundColor = '#ff727480'
+            selectedOption.classList.add("animate-pulse");
         }
+
+        setTimeout(() => {
+            selectedOption.style.backgroundColor = "transparent";
+            selectedOption.classList.remove("animate-pulse");
+        }, 2000);
     }
 
     const navigate = useNavigate();
@@ -109,8 +132,17 @@ export function ViewQuestions() {
 
         await saveFinishedCourse();
 
-        alert(`Has obtenido ${correctCount} respuestas correctas de ${questions.length} totales.`);
-        navigate('/home');
+        setFinalTestResult({
+            correctCount: correctCount,
+            totalQuestion: questions.length,
+            state: ""
+        });
+        setShowModalResult(true);
+
+        // alert(`Has obtenido ${correctCount} respuestas correctas de ${questions.length} totales.`);
+        setTimeout(() => {
+            navigate('/home');
+        }, 2000);
     }
 
     return (
@@ -136,27 +168,27 @@ export function ViewQuestions() {
                                         <h5 className="my-2 text-2xl font-bold tracking-tight text-slate-100">{question.description}</h5>
                                         <div className="text-1xl font-bold tracking-tight text-slate-100 py-5">
                                             <ul className="choices">
-                                                <li>
+                                                <li id={`${index}-a`} className="px-1 py-0.5 rounded">
                                                     <label>
-                                                        <input type="radio" name={question.id} value="A" onChange={() => handleAnswerChange(question.id, question.answers[0])} />
+                                                        <input type="radio" name={question.id} value="A" onChange={() => handleAnswerChange(question.id, question.answers[0], `${index}-a`)} />
                                                         {question.answers[0].answer}
                                                     </label>
                                                 </li>
-                                                <li>
+                                                <li id={`${index}-b`} className="px-1 py-0.5 rounded">
                                                     <label>
-                                                        <input type="radio" name={question.id} value="B" onChange={() => handleAnswerChange(question.id, question.answers[1])} />
+                                                        <input type="radio" name={question.id} value="B" onChange={() => handleAnswerChange(question.id, question.answers[1], `${index}-b`)} />
                                                         {question.answers[1].answer}
                                                     </label>
                                                 </li>
-                                                <li>
+                                                <li id={`${index}-c`} className="px-1 py-0.5 rounded">
                                                     <label>
-                                                        <input type="radio" name={question.id} value="C" onChange={() => handleAnswerChange(question.id, question.answers[2])} />
+                                                        <input type="radio" name={question.id} value="C" onChange={() => handleAnswerChange(question.id, question.answers[2], `${index}-c`)} />
                                                         {question.answers[2].answer}
                                                     </label>
                                                 </li>
-                                                <li>
+                                                <li id={`${index}-d`} className="px-1 py-0.5 rounded">
                                                     <label>
-                                                        <input type="radio" name={question.id} value="D" onChange={() => handleAnswerChange(question.id, question.answers[3])} />
+                                                        <input type="radio" name={question.id} value="D" onChange={() => handleAnswerChange(question.id, question.answers[3], `${index}-d`)} />
                                                         {question.answers[3].answer}
                                                     </label>
                                                 </li>
@@ -182,8 +214,9 @@ export function ViewQuestions() {
                         </>
                     )
                 }
-
             </div>
+            {showModalResult && <Modal_TotalPoints correctCount={finalTestResult.correctCount} totalQuestion={finalTestResult.totalQuestion}></Modal_TotalPoints>}
         </div>
     );
 }
+
