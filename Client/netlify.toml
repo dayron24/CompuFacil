@@ -4,6 +4,6 @@
     status = 200
 
 [[redirects]]
-    from = "/menu/:id"
-    to = "/menu/:id"
+    from = "/*"
+    to = "/"
     status = 200
