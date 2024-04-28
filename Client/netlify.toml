@@ -2,3 +2,8 @@
     from = "/home"
     to = "/"
     status = 200
+
+[[redirects]]
+    from = "/menu/:id"
+    to = "/menu/:id"
+    status = 200
