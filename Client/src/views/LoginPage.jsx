@@ -100,7 +100,7 @@ export function LoginPage() {
             <form className="space-y-4 md:space-y-6" action="#" onSubmit={loginUser}>
               <div>
                 <label className="block mb-6 text-[30px] font-bold font-large text-center text-#0B2027 ">
-                Ingresa tu correo y constraña:
+                Ingresa tu correo y contraseña:
                 </label>
                 <label className="block mb-2 text-sm font-bold font-large text-center text-#0B2027 ">
                   Correo:
