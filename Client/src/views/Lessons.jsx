@@ -71,7 +71,7 @@ export function ViewLessons() {
                             <div className="px-6 py-8">
                                 <div className="mb-5 flex items-center">
                                     <div className="mr-5 w-1/2 flex justify-center items-center ">
-                                        <img className="w-80 h-auto img-fluid rounded-lg" style="height: 300px;" src={lesson.image} alt={lesson.title} />
+                                        <img className="w-80 h-auto img-fluid rounded-lg" src={lesson.image} alt={lesson.title} />
                                     </div>
                                     <div className="w-1/2 h-1/2 py-20">
                                         <p className="text-3xl font-bold mb-3"> {lesson.title}</p>
