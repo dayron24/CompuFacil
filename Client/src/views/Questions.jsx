@@ -163,7 +163,7 @@ export function ViewQuestions() {
                                 <div key={index} className="flex p-5 w-1/3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
                                     <div className="flex flex-col justify-center items-start">
                                         <a href={`#`} className="w-full">
-                                            <img className="rounded-lg w-full" src={question.image} alt={question.title} />
+                                            <img className="rounded-lg w-80 h-auto" src={question.image} alt={question.title} />
                                         </a>
                                         <h5 className="my-2 text-2xl font-bold tracking-tight text-slate-100">{question.description}</h5>
                                         <div className="items-center text-1xl font-bold tracking-tight text-slate-100 py-5">
