@@ -160,13 +160,13 @@ export function ViewQuestions() {
                         <>
                             <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline px-10">Examen</h2>
                             {questions.map((question, index) => (
-                                <div key={index} className="p-5 w-1/2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
+                                <div key={index} className="flex p-5 w-1/3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
                                     <div className="flex flex-col justify-center items-start">
                                         <a href={`#`} className="w-full">
                                             <img className="rounded-lg w-full" src={question.image} alt={question.title} />
                                         </a>
                                         <h5 className="my-2 text-2xl font-bold tracking-tight text-slate-100">{question.description}</h5>
-                                        <div className="text-1xl font-bold tracking-tight text-slate-100 py-5">
+                                        <div className="items-center text-1xl font-bold tracking-tight text-slate-100 py-5">
                                             <ul className="choices">
                                                 <li id={`${index}-a`} className="px-1 py-0.5 rounded">
                                                     <label>

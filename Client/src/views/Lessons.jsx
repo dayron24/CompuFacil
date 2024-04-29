@@ -69,16 +69,16 @@ export function ViewLessons() {
                     ) : (
                         <>
                             <div className="px-6 py-8">
-                                <div className="mb-5 flex">
+                                <div className="mb-5 flex items-center">
                                     <div className="mr-5 w-1/2 flex justify-center items-center ">
-                                        <img className="w-80 h-80 rounded-lg" src={lesson.image} alt={lesson.title} />
+                                        <img className="w-80 h-auto img-fluid rounded-lg" style="height: 300px;" src={lesson.image} alt={lesson.title} />
                                     </div>
                                     <div className="w-1/2 h-1/2 py-20">
-                                        <p className="text-4xl font-bold mb-3"> {lesson.title}</p>
+                                        <p className="text-3xl font-bold mb-3"> {lesson.title}</p>
                                     </div>
                                 </div>
 
-                                <div className='px-20 py-20 bg-blue-900 rounded-lg'>
+                                <div className='px-10 py-10 bg-blue-900 rounded-lg'>
                                     <p className="text-3xl mb-3 text-white font-bold text-center "> {lesson.description} </p>
                                 </div>
                             </div>
