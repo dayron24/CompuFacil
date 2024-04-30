@@ -1,10 +1,9 @@
-Dependencies:
+Links:
 
-CompuFacil/server
-npm install express mongoose cors body-parser multer
-npm start
+pagina en linea:
 
-CompuFacil/client
-npm install 
-npm run dev 
-npm i prop-types
+http://compu-facil.netlify.app
+
+github:
+
+https://github.com/dayron24/CompuFacil
