@@ -74,7 +74,7 @@ export function ViewLessons() {
                                         <img className="w-80 h-auto img-fluid rounded-lg" src={lesson.image} alt={lesson.title} />
                                     </div>
                                     <div className="w-1/2 h-1/2 py-20">
-                                        <p className="text-3xl font-bold mb-3"> {lesson.title}</p>
+                                        <p className="text-2xl font-bold mb-3"> {lesson.title}</p>
                                     </div>
                                 </div>
 
