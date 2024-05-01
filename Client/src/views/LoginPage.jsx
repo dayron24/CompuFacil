@@ -94,7 +94,7 @@ export function LoginPage() {
       </p>
 
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div className="w-full bg-customgray rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white-800 dark:border-gray-700">
+        <div className="bg-customgray rounded-lg shadow dark:border md:mt-0 max-w-md xl:p-0 dark:bg-white-800 dark:border-gray-700">
             <div className="p-8 space-y-6 md:space-y-6 sm:p-8 ">
     
             <form className="space-y-4 md:space-y-6" action="#" onSubmit={loginUser}>
@@ -150,7 +150,7 @@ export function LoginPage() {
               <button
                 type="submit"
                 className="w-full justify-center text-white bg-red-800 font-bold  rounded-lg text-sm px-5 py-2.5 text-center 
-                      hover:bg-gradient-to-r hover:from-teal-600 hover:to-cyan-800 hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
+                      hover:bg-gradient-to-r hover:from-teal-300 hover:to-cyan-800 hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-1"
               >
                 Iniciar Sesión
               </button>
@@ -167,7 +167,7 @@ export function LoginPage() {
               <p className="text-sm font-light text-002857 ">
                 <Link
                   to="/register"
-                  className="font-bold text-#0B2027 underline"
+                  className="font-bold text-#0B2027 hover:text-red-900 underline italic"
                 >
                   ¿No te has registrado aún?
                 </Link>
