@@ -33,15 +33,15 @@ export function ViewUser() {
             <Header></Header>
 
             <div className="px-6 py-8">
-                <div className="mb-5 flex">
-                    <div className="mr-5 w-1/2 flex justify-center items-center">
-                        <img className="rounded-full w-80 h-80" src={userInfo.photo || "/src/img/fotoPerfilDefault.webp"} alt="profile" />
+                <div className="mb-5 flex gap-4 flex-wrap">
+                    <div className="flex justify-center items-center grow lg:max-w-sm">
+                        <img className="rounded-full w-80" src={userInfo.photo || "/src/img/fotoPerfilDefault.webp"} alt="profile" />
                     </div>
-                    <div className="w-1/2 pt-3">
-                        <p className="text-4xl font-bold mb-3">Nombre:</p>
-                        <p className="text-3xl font-bold mb-3">{userInfo.name}</p>
-                        <p className="text-4xl font-bold mb-3 mt-5">Correo:</p>
-                        <p className="text-3xl font-bold mb-3">{userInfo.email}</p>
+                    <div className="grow shrink pt-3">
+                        <p className="text-2xl sm:text-2xl font-bold mb-3">Nombre:</p>
+                        <p className="text-xl sm:text-3xl font-bold mb-3">{userInfo.name}</p>
+                        <p className="text-2xl sm:text-2xl font-bold mb-3 mt-5">Correo:</p>
+                        <p className="text-xl sm:text-3xl font-bold mb-3">{userInfo.email}</p>
                     </div>
                 </div>
 
@@ -66,22 +66,22 @@ export function ViewUser() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {coursesList.map((course, index) => (
                                     <div key={index} className="p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
-                                        <div className='flex mb-5'>
-                                            <div className="flex-shrink-0 mr-5 w-1/2">
-                                                <a href={`/menu/${course.id}`}>
-                                                    <img className="rounded-lg w-full h-auto" src={course.image} alt={course.title} />
-                                                </a>
+                                        <div className='flex flex-wrap xl:flex-nowrap mb-5 gap-2'>
+                                            <div className="basis-full">
+                                                <img className="rounded-lg" src={course.image} alt={course.title} />
                                             </div>
-                                            <div className="flex flex-col justify-center items-center w-1/2">
-                                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#ffffff]">{course.title}</h5>
+                                            <div className="basis-full flex flex-col justify-between">
+                                                <h5 className="mb-2 text-lg sm:text-2xl xl:text-3xl font-bold tracking-tight text-[#ffffff]">{course.title}</h5>
 
-                                                <span className='font-bold tracking-tight text-[#ffffff]'>Progreso del curso:</span>
-                                                <div className="w-full h-fit bg-gray-200 rounded-full dark:bg-gray-700">
-                                                    <div className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{width: `${(course.completedLessons/course.totalLessons) * 100}%`}}>{`${(course.completedLessons/course.totalLessons) * 100}%`}</div>
+                                                <div>
+                                                    <span className='font-bold tracking-tight text-[#ffffff] text-base sm:text-2xl mb-1'>Progreso del curso:</span>
+                                                    <div className="w-full h-fit bg-gray-200 rounded-full dark:bg-gray-700">
+                                                        <div className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{width: `${(course.completedLessons/course.totalLessons) * 100}%`}}>{`${(course.completedLessons/course.totalLessons) * 100}%`}</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href={`/menu/${course.id}`} className="inline-block w-full items-center justify-center px-3 py-2 text-md font-medium text-center text-white bg-[#14453D] rounded-lg">
+                                        <a href={`/menu/${course.id}`} className="inline-block w-full items-center justify-center px-3 py-2 text-lg font-medium text-center text-white bg-[#14453D] rounded-lg">
                                             Continuar
                                         </a>
                                     </div>

@@ -50,8 +50,10 @@ const fillTabsInfo = (data) => {
 export function HomePage() {
     const [activeTab, setActiveTab] = useState('nivel0');
     const [tabs, setTabs] = useState([]);
+    let isLoading = false;
 
     const handleTabClick = (tabName) => {
+        isLoading = true;
         setActiveTab(tabName);
     };
 
@@ -76,8 +78,10 @@ export function HomePage() {
         const currentTab = tabs.find(tab => tab.name === activeTab);
         if (!currentTab) return null;
 
+        isLoading = false;
+
         return (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
                 {currentTab.cards.map((card, index) => (
                     <div key={index} className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href='/menu'>
@@ -102,14 +106,14 @@ export function HomePage() {
         <div className="relative">
             <Header></Header>
 
-            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto min-h-screen">
+            <div className="flex flex-col items-center px-6 py-8 mx-auto min-h-screen">
                 {
-                    (tabs.length <= 0) ? (
+                    (tabs.length <= 0 || isLoading) ? (
                         <Spinner></Spinner>
                     ) : (
                         <>
-                            <div className="pb-5 text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
-                                <ul className="flex flex-wrap -mb-px">
+                            <div className="pb-5 text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400">
+                                <ul className="flex flex-wrap">
                                     {tabs.map(tab => (
                                         <li key={tab.name} className="">
                                             <a className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${activeTab === tab.name ? 'text-[#586994] border-[#586994] active' : 'border-gray-300 hover:text-gray-600 dark:hover:text-gray-300'}`} onClick={() => handleTabClick(tab.name)}>
@@ -120,7 +124,7 @@ export function HomePage() {
                                 </ul>
                             </div>
 
-                            <div className="p-5 border border-red-800 rounded-lg">
+                            <div id='card-container' className="p-5 border border-red-800 rounded-lg">
                                 {renderContent()}
                             </div>
                         </>

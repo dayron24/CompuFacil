@@ -69,17 +69,17 @@ export function ViewLessons() {
                     ) : (
                         <>
                             <div className="px-6 py-8">
-                                <div className="mb-5 flex items-center">
-                                    <div className="mr-5 w-1/2 flex justify-center items-center ">
-                                        <img className="w-80 h-auto img-fluid rounded-lg" src={lesson.image} alt={lesson.title} />
+                                <div className="mb-5 flex flex-col sm:flex-row gap-2 justify-center items-center">
+                                    <div className="shrink max-w-lg order-last sm:order-first">
+                                        <img className="w-full max-w-lg img-fluid rounded-lg" src={lesson.image} alt={lesson.title} />
                                     </div>
-                                    <div className="w-1/2 h-1/2 py-20">
-                                        <p className="text-2xl font-bold mb-3"> {lesson.title}</p>
+                                    <div className="max-w-lg">
+                                        <p className="text-4xl font-bold"> {lesson.title}</p>
                                     </div>
                                 </div>
 
                                 <div className='px-10 py-10 bg-blue-900 rounded-lg'>
-                                    <p className="text-3xl mb-3 text-white font-bold text-center "> {lesson.description} </p>
+                                    <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl mb-3 text-white font-bold text-center "> {lesson.description} </p>
                                 </div>
                             </div>
                             <div className="flex justify-center">
@@ -87,7 +87,7 @@ export function ViewLessons() {
                                     <a
                                         href={ (hasQuestions) ? `/questions/${id}` : `/home`}
                                         onClick={saveFinishedCourse}
-                                        className="justify-center text-white bg-gradient-to-r from-teal-700 to-cyan-950 font-medium rounded-lg text-md px-5 py-2.5 text-center 
+                                        className="justify-center text-white bg-gradient-to-r from-teal-700 to-cyan-950 font-medium rounded-lg text-lg px-7 py-2.5 text-center 
                         hover:bg-gradient-to-r hover:from-teal-600 hover:to-cyan-800 hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
                                     >
                                         Siguiente

@@ -158,15 +158,15 @@ export function ViewQuestions() {
                         </div>
                     ) : (
                         <>
-                            <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline px-10">Examen</h2>
+                            <h2 className="mb-5 text-3xl text-[#14453D] font-bold underline px-10">Examen</h2>
                             {questions.map((question, index) => (
                                 <div key={index} className="p-5 max-w-screen-sm w-full h-auto p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex">
-                                    <div className="flex flex-col justify-center items-start">
-                                        <a href={`#`} className="w-full">
+                                    <div className="flex flex-col justify-center items-center">
+                                        <a href={`#`} className="">
                                             <img className="rounded-lg w-80 h-auto" src={question.image} alt={question.title} />
                                         </a>
-                                        <h5 className="my-2 text-2xl font-bold tracking-tight text-slate-100">{question.description}</h5>
-                                        <div className="items-center text-1xl font-bold tracking-tight text-slate-100 py-5">
+                                        <h5 className="my-2 text-lg sm:text-2xl font-bold tracking-tight text-slate-100">{question.description}</h5>
+                                        <div className="w-full items-center text-lg sm:text-lg font-bold tracking-tight text-slate-100 py-5">
                                             <ul className="choices">
                                                 <li id={`${index}-a`} className="px-1 py-0.5 rounded">
                                                     <label>
@@ -194,7 +194,7 @@ export function ViewQuestions() {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <button onClick={() => Revisar(question)} className="inline-block w-full items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-[#14453D] rounded-lg">
+                                        <button onClick={() => Revisar(question)} className="inline-block w-full items-center justify-center py-2 text-lg font-medium text-center text-white bg-[#14453D] rounded-lg">
                                             Revisar
                                         </button>
                                     </div>
@@ -204,7 +204,7 @@ export function ViewQuestions() {
                                 <div className="max-w-full h-full py-5">
                                     <button
                                         onClick={Finalizar}
-                                        className="justify-center text-white bg-gradient-to-r from-teal-700 to-cyan-950 font-medium rounded-lg text-md px-5 py-2.5 text-center 
+                                        className="justify-center text-white bg-gradient-to-r from-teal-700 to-cyan-950 font-medium rounded-lg text-xl px-7 py-2.5 text-center 
                         hover:bg-gradient-to-r hover:from-teal-600 hover:to-cyan-800 hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
                                     >
                                         Finalizar
