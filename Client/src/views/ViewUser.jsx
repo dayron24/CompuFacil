@@ -35,7 +35,7 @@ export function ViewUser() {
             <div className="px-6 py-8">
                 <div className="mb-5 flex gap-4 flex-wrap">
                     <div className="flex justify-center items-center grow lg:max-w-sm">
-                        <img className="rounded-full w-80" src={userInfo.photo || "/src/img/fotoPerfilDefault.webp"} alt="profile" />
+                        <img className="rounded-full w-80" src={userInfo.photo || "https://i.ibb.co/9yycdr4/360-F-64676383-Ldbmhi-NM6-Ypzb3-FM4-PPu-FP9r-He7ri8-Ju.jpg"} alt="profile" />
                     </div>
                     <div className="grow shrink pt-3">
                         <p className="text-2xl sm:text-2xl font-bold mb-3">Nombre:</p>
