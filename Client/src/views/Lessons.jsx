@@ -78,8 +78,8 @@ export function ViewLessons() {
                                     </div>
                                 </div>
 
-                                <div className='px-10 py-10 bg-blue-900 rounded-lg'>
-                                    <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl mb-3 text-white font-bold text-center "> {lesson.description} </p>
+                                <div className='px-5 py-5 bg-blue-900 rounded-lg'>
+                                    <p className="text-lg sm:text-l lg:text-xl xl:text-2xl mb-3 text-white font-bold text-center "> {lesson.description} </p>
                                 </div>
                             </div>
                             <div className="flex justify-center">

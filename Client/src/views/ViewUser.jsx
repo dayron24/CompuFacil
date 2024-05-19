@@ -48,28 +48,40 @@ export function ViewUser() {
                     };
                 });
             };
-    
+                // Obtener la fecha actual
+            const getCurrentDate = () => {
+                const today = new Date();
+                const dd = String(today.getDate()).padStart(2, '0');
+                const mm = String(today.getMonth() + 1).padStart(2, '0'); // Enero es 0!
+                const yyyy = today.getFullYear();
+                return `${dd}/${mm}/${yyyy}`;
+            };
             loadImage(certificadoImg).then((imgData) => {
                 doc.addImage(imgData, 'PNG', 0, 0, 356, 200); // Ajusta las dimensiones según sea necesario
     
                 // Título del certificado
                 doc.setFontSize(22);
                 doc.setFont('helvetica', 'bold');
-                doc.text('Certificado de Curso', 178, 40, { align: 'center' });
+                doc.text('Certificado de completitud de curso', 178, 40, { align: 'center' });
     
                 // Información del usuario
                 doc.setFontSize(16);
                 doc.setFont('helvetica', 'normal');
-                doc.text(`Nombre: ${userInfo.name}`, 20, 60);
-                doc.text(`Correo: ${userInfo.email}`, 20, 70);
+                doc.text(`Nombre: ${userInfo.name}`, 178, 70,{ align: 'center' });
+                doc.text(`Correo: ${userInfo.email}`, 178, 90,{ align: 'center' });
     
                 // Información del curso
-                doc.text(`Curso: ${course.title}`, 20, 80);
-                doc.text(`Progreso: ${(course.completedLessons / course.totalLessons) * 100}%`, 20, 90);
-    
-                // Pie de página
+                doc.text(`Curso: ${course.title}`, 178, 110,{ align: 'center' });
+                doc.text(`Progreso: ${(course.completedLessons / course.totalLessons) * 100}%`, 178, 130,{ align: 'center' });
+                
+
+                // Fecha
+                const currentDate = getCurrentDate();
+                doc.text(`Fecha: ${currentDate}`, 178, 150, { align: 'center' });
+
+                        // Pie de página
                 doc.setFontSize(12);
-                doc.text('Este es un certificado generado automáticamente.', 178, 190, { align: 'center' });
+                doc.text('Este es un certificado generado automáticamente por CompuFacil.', 178, 190, { align: 'center' });
 
             // // Añadir tabla de contenido del curso
             // doc.autoTable({
