@@ -60,12 +60,12 @@ export function ViewUser() {
                 doc.addImage(imgData, 'PNG', 0, 0, 356, 200); // Ajusta las dimensiones según sea necesario
     
                 // Título del certificado
-                doc.setFontSize(22);
+                doc.setFontSize(26);
                 doc.setFont('helvetica', 'bold');
                 doc.text('Certificado de completitud de curso', 178, 40, { align: 'center' });
     
                 // Información del usuario
-                doc.setFontSize(16);
+                doc.setFontSize(20);
                 doc.setFont('helvetica', 'normal');
                 doc.text(`Nombre: ${userInfo.name}`, 178, 70,{ align: 'center' });
                 doc.text(`Correo: ${userInfo.email}`, 178, 90,{ align: 'center' });
