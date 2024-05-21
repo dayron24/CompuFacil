@@ -88,7 +88,7 @@ export function ViewLessons() {
                                         href={ (hasQuestions) ? `/questions/${id}` : `/home`}
                                         onClick={saveFinishedCourse}
                                         className="justify-center text-white bg-gradient-to-r from-[#09a6a3] to-cyan-950 font-medium rounded-lg text-lg px-7 py-2.5 text-center 
-                        hover:bg-gradient-to-r hover:from-teal-600 hover:to-cyan-800 hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
+                        hover:bg-gradient-to-r hover:from-cyan-600 hover:to-cyan-800 hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
                                     >
                                         Siguiente
                                     </a>

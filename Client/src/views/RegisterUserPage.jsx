@@ -128,12 +128,12 @@ function RegisterUserPage() {
                   //onsult(e);
                 }}
               >
-                <h2 className="my-9 text-[5 0px] font-bold text-center leading-tight tracking-tight text-white text-3xl ">
+                <h2 className="my-9 text-[5 0px] font-bold text-center leading-tight tracking-tight text-black text-3xl ">
                   Registro
                 </h2>
                 <div className="w-full px-3 mb-6 mb-0">
                     <label
-                      className="flex justify-center uppercase tracking-wide text-white text-xs font-bold mb-2"
+                      className="flex justify-center uppercase tracking-wide text-black text-xs font-bold mb-2"
                       htmlFor="grid-foto"
                     >
                       Foto
@@ -156,10 +156,10 @@ function RegisterUserPage() {
                             />
                           </div>
                           <div className="relative items-center">
-                            <span className="block relative text-white group-hover:text-blue-500">
+                            <span className="block relative text-black group-hover:text-blue-500">
                               Subir archivo
                             </span>
-                            <span className="mt-0.5 block text-sm text-white ">
+                            <span className="mt-0.5 block text-sm text-black ">
                               {fileName}
                             </span>
                           </div>
@@ -178,7 +178,7 @@ function RegisterUserPage() {
                 <div className="flex flex-wrap -mx-20 mb-6">
                   <div className="w-full px-3 mb-6 mb-0">
                     <label
-                      className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                      className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                       htmlFor="grid-firstName"
                     >
                       Nombre
@@ -195,7 +195,7 @@ function RegisterUserPage() {
                   </div>
                   <div className="w-full px-3">
                     <label
-                      className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                      className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                       htmlFor="grid-lastName1"
                     >
                       Apellido 1
@@ -212,7 +212,7 @@ function RegisterUserPage() {
                   </div>
                   <div className="w-full px-3">
                     <label
-                      className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                      className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                       htmlFor="grid-lastName2"
                     >
                       Apellido 2
@@ -232,7 +232,7 @@ function RegisterUserPage() {
                 <div className="flex flex-wrap -mx-20 mb-6">
                   <div className="w-full px-3">
                     <label
-                      className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                      className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                       htmlFor="grid-celular"
                     >
                       Correo
@@ -252,7 +252,7 @@ function RegisterUserPage() {
                 <div className="flex flex-wrap -mx-20 mb-2">
                   <div className="w-full px-3 mb-6 mb-0">
                     <label
-                      className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                      className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                       htmlFor="grid-descripcion"
                     >
                       Contraseña
@@ -269,7 +269,7 @@ function RegisterUserPage() {
                   </div>
                   <div className="w-full px-3 mb-6 mb-0">
                     <label
-                      className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+                      className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
                       htmlFor="grid-descripcion"
                     >
                       Confirmar contraseña
