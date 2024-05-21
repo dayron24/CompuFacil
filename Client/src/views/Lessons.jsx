@@ -78,7 +78,7 @@ export function ViewLessons() {
                                     </div>
                                 </div>
 
-                                <div className='px-5 py-5 bg-#9dbfaf rounded-lg'>
+                                <div className='px-5 py-5 bg-[#9dbfaf] rounded-lg'>
                                     <p className="text-lg sm:text-l lg:text-xl xl:text-2xl mb-3 text-white font-bold text-center "> {lesson.description} </p>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@ export function ViewLessons() {
                                     <a
                                         href={ (hasQuestions) ? `/questions/${id}` : `/home`}
                                         onClick={saveFinishedCourse}
-                                        className="justify-center text-white bg-gradient-to-r from-teal-700 to-cyan-950 font-medium rounded-lg text-lg px-7 py-2.5 text-center 
+                                        className="justify-center text-white bg-gradient-to-r from-[#09a6a3] to-cyan-950 font-medium rounded-lg text-lg px-7 py-2.5 text-center 
                         hover:bg-gradient-to-r hover:from-teal-600 hover:to-cyan-800 hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1"
                                     >
                                         Siguiente

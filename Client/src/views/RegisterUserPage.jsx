@@ -119,7 +119,7 @@ function RegisterUserPage() {
       </p>
       <div className="flex flex-col items-center justify-center px-6 my-4 mx-auto lg:py-0">
 
-        <div className="w-full bg-customgray rounded-lg shadow dark:border max-w-lg xl:p-0 dark:bg-white-800 dark:border-gray-700" >
+        <div className="w-full bg-#edebc9 rounded-lg shadow dark:border max-w-lg xl:p-0 dark:bg-white-800 dark:border-gray-700" >
           <div className="flex flex-col items-center justify-center ">
             <div className="w-6/12 ">
               <form

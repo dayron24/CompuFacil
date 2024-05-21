@@ -89,9 +89,9 @@ export function HomePage() {
                         </a>
                         <div className="p-5 bg-yellow-50">
                             <a>
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#00ccbe] text-center">{card.title}</h5>
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#09a6a3] text-center">{card.title}</h5>
                             </a>
-                            <p className="mb-3 font-normal text-[#9dbfaf]">{card.description}</p>
+                            <p className="mb-3 font-normal text-[#09a6a3]">{card.description}</p>
                             <a href={`/menu/${card.id}`} className="inline-block w-full min-w-full max-w-xs items-center justify-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#09a6a3]">
                                 Iniciar curso
                             </a>

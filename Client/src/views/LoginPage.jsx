@@ -94,7 +94,7 @@ export function LoginPage() {
       </p>
 
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div className="bg-customgray rounded-lg shadow dark:border md:mt-0 max-w-md xl:p-0 dark:bg-white-800 dark:border-gray-700">
+        <div className="bg-#edebc9 rounded-lg shadow dark:border md:mt-0 max-w-md xl:p-0 dark:bg-white-800 dark:border-gray-700">
             <div className="p-8 space-y-6 md:space-y-6 sm:p-8 ">
     
             <form className="space-y-4 md:space-y-6" action="#" onSubmit={loginUser}>
