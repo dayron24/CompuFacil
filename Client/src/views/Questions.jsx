@@ -194,7 +194,7 @@ export function ViewQuestions() {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <button onClick={() => Revisar(question)} className="inline-block w-full items-center justify-center py-2 text-lg font-medium text-center text-white bg-[#14453D] rounded-lg">
+                                        <button onClick={() => Revisar(question)} className="inline-block w-full items-center justify-center py-2 text-lg font-medium text-center text-white bg-[#09a6a3] rounded-lg">
                                             Revisar
                                         </button>
                                     </div>

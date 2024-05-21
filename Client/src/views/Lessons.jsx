@@ -78,7 +78,7 @@ export function ViewLessons() {
                                     </div>
                                 </div>
 
-                                <div className='px-5 py-5 bg-blue-900 rounded-lg'>
+                                <div className='px-5 py-5 bg-#9dbfaf rounded-lg'>
                                     <p className="text-lg sm:text-l lg:text-xl xl:text-2xl mb-3 text-white font-bold text-center "> {lesson.description} </p>
                                 </div>
                             </div>

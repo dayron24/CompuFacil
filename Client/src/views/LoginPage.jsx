@@ -99,10 +99,10 @@ export function LoginPage() {
     
             <form className="space-y-4 md:space-y-6" action="#" onSubmit={loginUser}>
               <div>
-                <label className="block mb-6 text-[30px] font-bold font-large text-center text-#0B2027 ">
+                <label className="block mb-6 text-[30px] font-bold font-large text-center text-#00ccbe ">
                 Ingresa tu correo y contraseña:
                 </label>
-                <label className="block mb-2 text-sm font-bold font-large text-center text-#0B2027 ">
+                <label className="block mb-2 text-sm font-bold font-large text-center text-#00ccbe ">
                   Correo:
                 </label>
                 <input
@@ -126,7 +126,7 @@ export function LoginPage() {
               </div>
 
               <div>
-                  <label className="block mb-2 text-sm font-bold font-large text-center text-#0B2027 ">
+                  <label className="block mb-2 text-sm font-bold font-large text-center text-#00ccbe ">
                   Contraseña:
                 </label>
                 <input
@@ -167,7 +167,7 @@ export function LoginPage() {
               <p className="text-sm font-light text-002857 ">
                 <Link
                   to="/register"
-                  className="font-bold text-#0B2027 hover:text-red-900 underline italic"
+                  className="font-bold text-#00ccbe hover:text-red-900 underline italic"
                 >
                   ¿No te has registrado aún?
                 </Link>

@@ -89,10 +89,10 @@ export function HomePage() {
                         </a>
                         <div className="p-5 bg-yellow-50">
                             <a>
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#0B2027] text-center">{card.title}</h5>
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#00ccbe] text-center">{card.title}</h5>
                             </a>
-                            <p className="mb-3 font-normal text-[#586994]">{card.description}</p>
-                            <a href={`/menu/${card.id}`} className="inline-block w-full min-w-full max-w-xs items-center justify-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#14453D]">
+                            <p className="mb-3 font-normal text-[#9dbfaf]">{card.description}</p>
+                            <a href={`/menu/${card.id}`} className="inline-block w-full min-w-full max-w-xs items-center justify-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-[#09a6a3]">
                                 Iniciar curso
                             </a>
                         </div>
@@ -116,7 +116,7 @@ export function HomePage() {
                                 <ul className="flex flex-wrap">
                                     {tabs.map(tab => (
                                         <li key={tab.name} className="">
-                                            <a className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${activeTab === tab.name ? 'text-[#586994] border-[#586994] active' : 'border-gray-300 hover:text-gray-600 dark:hover:text-gray-300'}`} onClick={() => handleTabClick(tab.name)}>
+                                            <a className={`inline-block p-4 border-b-2 rounded-t-lg cursor-pointer ${activeTab === tab.name ? 'text-[#9dbfaf] border-[#586994] active' : 'border-gray-300 hover:text-gray-600 dark:hover:text-gray-300'}`} onClick={() => handleTabClick(tab.name)}>
                                                 {tab.label}
                                             </a>
                                         </li>

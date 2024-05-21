@@ -117,7 +117,7 @@ export function ViewUser() {
                     </div>
                 </div>
 
-                <h2 className="mb-5 text-2xl text-[#14453D] font-bold underline">Mis cursos:</h2>
+                <h2 className="mb-5 text-2xl text-[#09a6a3] font-bold underline">Mis cursos:</h2>
 
                 <div className="flex flex-col items-center mx-auto min-h-screen">
                     {
