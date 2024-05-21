@@ -151,7 +151,7 @@ export function ViewUser() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a href={`/menu/${course.id}`} className="inline-block w-full items-center justify-center px-3 py-2 text-lg font-medium text-center text-white bg-[#09a6a3] rounded-lg">
+                                                    <a href={`/menu/${course.id}`} className="inline-block w-full items-center justify-center px-3 py-2 text-lg font-medium text-center text-white bg-[#237b79] rounded-lg">
                                                         Continuar
                                                     </a>
                                                     <button onClick={() => generatePDF(course)} className="mt-2 w-full items-center justify-center px-3 py-2 text-lg font-medium text-center text-white bg-blue-600 rounded-lg">
